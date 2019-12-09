@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- beans 객체 실행 (의존객체 실행?? / set) -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:context="http://www.springframework.org/schema/context" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -10,9 +12,5 @@
 
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
-
-<bean class="Controller.Main.MainController">
-</bean>
-
 
 </beans>

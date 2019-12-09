@@ -1,7 +1,61 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
 
-<web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://java.sun.com/xml/ns/javaee"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+			http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+		version="3.0">
   <display-name>Archetype Created Web Application</display-name>
+  
+  <!-- Servlet 설정 -->
+  <servlet>
+  	<servlet-name>dispatcher</servlet-name>
+  	<!-- Dispatcher 부분 -->
+  	<servlet-class>
+  		<!-- param-value의 xml파일을 읽기 위해 -->
+  		org.springframework.web.servlet.DispatcherServlet
+  	</servlet-class>
+  	<init-param>
+  		<!-- contextConfigLocation xml 전달할 변수 ?? -->
+  		<param-name>contextConfigLocation</param-name>
+  		
+  		<!-- param-value에다 resource에 있는 xml파일 기입. -->
+  		<param-value>
+  			<!-- 모든 기본적인 설정 -->
+  			classpath:spring-jdbc.xml
+  			classpath:spring-context.xml
+  			
+  			<!-- 각자 만들어짐(내용이) -->
+  			classpath:spring-controller.xml
+  		</param-value>
+  	</init-param>
+  	<!-- servlet 읽는 순서  -->
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>dispatcher</servlet-name>
+  	<!-- / >>> 확장자 사용 x (입력 경로 확장자 사용 안함) -->
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <!-- encoding Type UTF-8 -->
+  <filter>
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>
+  		org.springframework.web.filter.CharacterEncodingFilter
+  	</filter-class>
+  	
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<!-- url 패턴 (입력 경로 ??) 확장자 사용 x -->
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+body {
+	width: 100%;
+}
+
+/* div태그의 mainTop_navigation 클래스 css */
+.mainTop_navigation {
+	height: 30px;
+	width: 1920px;
+	background-color: #2d2d2d;
+}
+
+.mainTop_navigation ul {
+	float: center;
+}
+
+/* div태그의 mainTop_navigation 클래스안 ul안에 포함된 li의 css */
+.mainTop_navigation ul li {
+	/* 목록을 나타내는 점을 없앤다 */
+	list-style: none;
+	
+	color: white;
+	background-color: #2d2d2d;
+	display: inline-block;
+	
+	line-height: 30px;
+	
+	/* 세로 정렬을 가운데로 설정(위의 line-height와 같이 설정 필요함) */
+	vertical-align: middle;
+	
+	text-align: center;
+}
+
+/* a태그의 menuLink 클래스 css */
+.mainTop_navigation .menuLink {
+	/* 링크(<a> 태그)가 가지는 기본 꾸밈 효과(밑줄 등)을 없앰 */
+	text-decoration:none;
+	color: white;
+	/* 링크를 글씨가 있는 부분 뿐만아니라 전체 영역을 클릭해도 링크가 걸리게 설정 */
+	display: block;
+	width: 150px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: "Trebuchet MS", Dotum, Arial;
+}
+
+.mainTop_navigation .menuLink:hover {
+	color: white;
+	background-color: #4d4d4d;
+}
