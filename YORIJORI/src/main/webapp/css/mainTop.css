@@ -4,36 +4,44 @@ body {
 	width: 100%;
 }
 
+
+.mainTop_logo {
+	width: 100%;
+	height: 100px;
+	text-align: center;	
+}
+
+
 /* div태그의 mainTop_navigation 클래스 css */
 .mainTop_navigation {
-	height: 30px;
-	width: 1920px;
+	height: 45px;
+	width: 100%;
 	background-color: #2d2d2d;
 }
 
-.mainTop_navigation ul {
-	float: center;
+.mainTop_nav ul {
+	width: 1024px;
+	height: 30px;
+	text-align: center;
+	margin:0 auto;
+	padding:9px 30px 0;
 }
 
 /* div태그의 mainTop_navigation 클래스안 ul안에 포함된 li의 css */
-.mainTop_navigation ul li {
+.mainTop_nav ul li {
+	
 	/* 목록을 나타내는 점을 없앤다 */
 	list-style: none;
-	
 	color: white;
 	background-color: #2d2d2d;
 	display: inline-block;
-	
 	line-height: 30px;
-	
 	/* 세로 정렬을 가운데로 설정(위의 line-height와 같이 설정 필요함) */
 	vertical-align: middle;
-	
-	text-align: center;
 }
 
 /* a태그의 menuLink 클래스 css */
-.mainTop_navigation .menuLink {
+.mainTop_nav .menuLink {
 	/* 링크(<a> 태그)가 가지는 기본 꾸밈 효과(밑줄 등)을 없앰 */
 	text-decoration:none;
 	color: white;
@@ -45,7 +53,7 @@ body {
 	font-family: "Trebuchet MS", Dotum, Arial;
 }
 
-.mainTop_navigation .menuLink:hover {
+.mainTop_nav .menuLink:hover {
 	color: white;
 	background-color: #4d4d4d;
 }

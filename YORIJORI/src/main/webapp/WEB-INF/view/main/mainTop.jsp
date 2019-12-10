@@ -10,16 +10,24 @@
 <body>
 <div class="mainTop_Header">
 	<div class="mainTop_logo">
-		<img src="#" alt="메인로고" />
+		<a href="main" >
+			<img src="/YORIJORI/images/요리조리로고.png" alt="메인로고" style="margin-top: 10px;" />
+		</a>
 	</div>
 	<div class="mainTop_navigation">
-		<ul>
-			<li><a class="menuLink" href="#">레시피</a></li>
-			<li><a class="menuLink" href="#">클래스</a></li>
-			<li><a class="menuLink" href="#">쇼핑몰</a></li>
-			<li><a class="menuLink" href="#">경연대회</a></li>
-			<li><a class="menuLink" href="#">QnA</a></li>
-		</ul>
+		<div class="mainTop_nav">
+			<ul>
+				<li><a class="menuLink" href="1">레시피</a></li>
+				<li>|</li>
+				<li><a class="menuLink" href="2">클래스</a></li>
+				<li>|</li>
+				<li><a class="menuLink" href="3">쇼핑몰</a></li>
+				<li>|</li>
+				<li><a class="menuLink" href="4">경연대회</a></li>
+				<li>|</li>
+				<li><a class="menuLink" href="5">QnA</a></li>
+			</ul>
+		</div>
 	</div>
 </div>
 </body>
