@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- configuration -->
+<!-- mapper를 할 시 mapper로 바꿈?? -->
+<!DOCTYPE configuration PUBLIC	"-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>
+	<!-- parameterType에 쓰일 별칭 지정 -->
+	<!-- <typeAlias type="Model.DTO.MemberDTO" alias="memDTO" />
+		type="사용 할 형에대한 경로" alias="지정할 별칭"
+	 -->
+	
+</configuration>

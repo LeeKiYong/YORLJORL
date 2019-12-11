@@ -34,30 +34,30 @@
 <mvc:resources location="/**" mapping="/WEB-INF/view/" cache-period="14400" />
 
 <!-- 페이지 이동 제한 (직접 주소창에 주소를 쳐 들어오지 못하게 하기 위해) -->
-<mvc:interceptors>
-	<mvc:interceptor>
+<!-- <mvc:interceptors>
+	<mvc:interceptor> -->
 		<!-- /edit로 시작되는 주소가 있을 시 -->
 		<!-- <mvc:mapping path="/xxx/**"/>  >>  /xxx로 시작되는 주소가 있을 시.(조건)-->
-		<mvc:mapping path="/edit/**"/>
+		<!-- <mvc:mapping path="/edit/**"/>
 		<bean class="Interceptor.AuthCheckInterceptor" />
 	</mvc:interceptor>
-</mvc:interceptors>
+</mvc:interceptors> -->
 
  <!--  메세지 .properties 사용  -->
-<bean id="messageSource"
+<!-- <bean id="messageSource"
 	class="org.springframework.context.support.ResourceBundleMessageSource">
 	<property name="basenames">
-		<list>
+		<list> -->
 			 <!--  text 파일 >> UTF-8 --> 
 			 <!--  폴더명.파일명(확장자=properties)  --> 
-			<value>message.label</value>
+			<!-- <value>message.label</value>
 			<value>message.error</value>
 		</list>
-	</property>
+	</property> -->
 	 <!-- message 정의? --> 
 	 <!-- 기본 인코딩타입 utf-8 --> 
-	<property name="defaultEncoding" value="UTF-8" />
-</bean>
+	<!-- <property name="defaultEncoding" value="UTF-8" />
+</bean> -->
 
 <!-- MutipartFile 의존 객체 (파일 업로드)
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
