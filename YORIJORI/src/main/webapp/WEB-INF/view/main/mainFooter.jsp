@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/YORIJORI/css/mainFooter.css" />
 </head>
 <body>
-<div class="main_footer" style="background-color:red">
+<div class="main_footer">
 	안녕하세요. footer 부분입니다.
 </div>
 </body>
