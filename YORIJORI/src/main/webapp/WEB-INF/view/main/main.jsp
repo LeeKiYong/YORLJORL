@@ -20,7 +20,7 @@ function boardTabSetting() {
     $($('.boardCurrent').find('a').attr('href')).show();
 
     // BoardTab 메뉴 클릭 이벤트 생성
-    $('li').click(function (event) {
+    $('#board_tap').click(function (event) {
         var tagName = event.target.tagName; // 현재 선택된 태그네임
         // A태그일 경우 상위 Li태그 선택, Li태그일 경우 그대로 태그 객체
         var selectedLiTag = (tagName.toString() == 'A') ? $(event.target).parent('li') : $(event.target);
@@ -49,7 +49,7 @@ function recipeTabSetting() {
 	$($('.recipeCurrent').find('a').attr('href')).show();
 	
 	// RecipeTab 메뉴 클릭 이벤트 생성
-    $('li').click(function (event) {
+    $('#recipe_tap').click(function (event) {
         var tagName = event.target.tagName; // 현재 선택된 태그네임
         // A태그일 경우 상위 Li태그 선택, Li태그일 경우 그대로 태그 객체
         var selectedLiTag = (tagName.toString() == 'A') ? $(event.target).parent('li') : $(event.target);
@@ -92,7 +92,7 @@ $(function () {
     <div class="div_left">
     	<!-- 게시판 탭 메뉴 -->
     	<div class="board" style="border: 2px solid black; height:300px; margin:5px;">
-		   	<div class="board_tap">
+		   	<div class="board_tap" id="board_tap">
 		   		<ul>
 		   			<li class="tap_menu boardCurrent">
 		   				<a href="" >공지사항</a>
@@ -116,8 +116,8 @@ $(function () {
 		</div>
 		
 		<!-- 추천레시피 탭 메뉴 -->
-		<div class="recommand_recipe" style="border: 2px solid black; height:500px; margin:5px;">
-			<div class="recipe_tap">
+		<div class="recommand_recipe" style="border: 2px solid black; height:300px; margin:5px;">
+			<div class="recipe_tap" id="recipe_tap">
 				<ul>
 		   			<li class="tap_menu recipeCurrent">
 		   				<a href="" >한식</a>
@@ -141,7 +141,7 @@ $(function () {
     	<!-- 로그인 div -->
     	<div class="main_login" style="margin:5px;">
     		<p>로그인 버튼을 눌러주세요.</p>
-			<a href="regist/agree">
+			<a href="loginForm">
 				<button class="w3-button w3-black w3-round-xlarge" style="width:300px">로그인</button>
 			</a>
 			<div>
@@ -154,24 +154,35 @@ $(function () {
     	<!-- 광고 및 이벤트 div -->
     	<div class="main_event&Ad" style="margin-top:30px">
 	    	<div class="div_eventBaner1">
-	    		<img class="img_setting" src="/YORIJORI/images/이벤트예시1.jpg" alt="이벤트배너1" />
+	    		<a href="#" >
+	    			<img class="img_setting" src="/YORIJORI/images/이벤트예시1.jpg" alt="이벤트배너1" />
+	    		</a>	
 	    	</div>
 	    	<div class="div_eventBaner2">
-	    		<img class="img_setting" src="/YORIJORI/images/이벤트예시2.jpg" alt="이벤트배너2" />
+	    		<a href="##">
+	    			<img class="img_setting" src="/YORIJORI/images/이벤트예시2.jpg" alt="이벤트배너2" />
+	    		</a>
 	    	</div>
 	    	<div class="div_adBaner1">
-	    		<img  class="img_setting" src="/YORIJORI/images/광고예시1.jpg" alt="광고배너1" />
+	    		<a href="###">
+	    			<img  class="img_setting" src="/YORIJORI/images/광고예시1.jpg" alt="광고배너1" />
+	    		</a>
 	    	</div>
 	    	<div class="div_adBaner2">
-	    		<img class="img_setting" src="/YORIJORI/images/광고예시2.jpg" alt="광고배너2" />
+	    		<a href="####">
+	    			<img class="img_setting" src="/YORIJORI/images/광고예시2.jpg" alt="광고배너2" />
+	    		</a>
 	    	</div>
     	</div>
 	</div>
 </div>
-
-<!-- 하단 footer -->
 <div>
-	<jsp:include page="mainFooter.jsp" />
+	==================================================================
+	<div>
+		<jsp:include page="mainFooter.jsp" />
+	</div>
 </div>
 </body>
 </html>
+
+
