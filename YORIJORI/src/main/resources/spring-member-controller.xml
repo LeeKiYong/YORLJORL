@@ -11,7 +11,7 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
-<bean class="Controller.Main.MainController">
+<bean class="Controller.Member.MemberJoinController">
 </bean>
 
 </beans>

@@ -145,7 +145,7 @@ $(function () {
 				<button class="w3-button w3-black w3-round-xlarge" style="width:300px">로그인</button>
 			</a>
 			<div>
-				<a href="#">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="register/agree">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
 				<a href="##" class="" >아이디</a>&middot;
 				<a href="###" class="" >비밀번호 찾기</a>
     		</div>

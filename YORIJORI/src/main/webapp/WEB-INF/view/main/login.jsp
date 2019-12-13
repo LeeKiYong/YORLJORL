@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>YORIJORI</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script type="text/javascript">
@@ -27,7 +27,7 @@
 		<input type="text" name="pw" class="w3-input w3-border w3-round-large"  />
 	</div>	
 	<div>
-		<a href="#">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="register/agree">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="##" class="" >아이디</a>&middot;
 		<a href="###" class="" >비밀번호 찾기</a>
     </div>

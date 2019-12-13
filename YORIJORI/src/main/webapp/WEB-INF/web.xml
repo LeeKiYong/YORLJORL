@@ -27,6 +27,8 @@
   			
   			<!-- 각자 만들어짐(내용이) -->
   			classpath:spring-controller.xml
+  			classpath:spring-member-beans.xml
+  			classpath:spring-member-controller.xml
   		</param-value>
   	</init-param>
   	<!-- servlet 읽는 순서  -->
