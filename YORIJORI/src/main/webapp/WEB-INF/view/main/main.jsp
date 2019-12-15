@@ -170,8 +170,8 @@ $(function () {
 </div>
 
 <!-- 하단 footer -->
-<div>
+<footer>
 	<jsp:include page="mainFooter.jsp" />
-</div>
+</footer>
 </body>
 </html>
