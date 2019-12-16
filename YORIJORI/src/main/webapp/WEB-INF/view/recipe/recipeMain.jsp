@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../publicFile/taglib.jsp" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +11,14 @@
 <div>
 	<jsp:include page="../main/mainTop.jsp" />
 </div>
-<div style=" text-align:center;border: 2px solid black; width:700px; height:300px; margin:0 auto;">
+<div>
+<div style="border: 2px solid black; width:70%; height:40%; margin: 5px;">
 집가고싶따<br />
+<div style = "botton: 70%">
+	<a href="recipeRegister">레시피등록</a>
 </div>
-<form>
-<a href=""></a>
-</form>
+</div>
+
+</div>
 </body>
 </html>
