@@ -17,7 +17,7 @@
 	<div class="mainTop_navigation">
 		<div class="mainTop_nav">
 			<ul>
-				<li><a class="menuLink" href="#">레시피</a></li>
+				<li><a class="menuLink" href="recipeMain">레시피</a></li>
 				<li>|</li>
 				<li><a class="menuLink" href="##">클래스</a></li>
 				<li>|</li>

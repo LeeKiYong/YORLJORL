@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	오늘도 지각한 지운.
+	오늘도 지운한 지각.
 </body>
 </html>
