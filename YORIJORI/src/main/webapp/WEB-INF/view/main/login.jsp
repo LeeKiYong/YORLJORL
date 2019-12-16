@@ -7,8 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>YORIJORI</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<title><spring:message code="site.name" /></title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script type="text/javascript">
 </script>

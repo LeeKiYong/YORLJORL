@@ -8,10 +8,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>YORIJORI</title>
+<title><spring:message code="site.name" /></title>
 <link rel="stylesheet" type="text/css" href="/YORIJORI/css/main.css" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 
 function boardTabSetting() {
@@ -145,7 +144,7 @@ $(function () {
 				<button class="w3-button w3-black w3-round-xlarge" style="width:300px">로그인</button>
 			</a>
 			<div>
-				<a href="register/agree">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="register/regist">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
 				<a href="##" class="" >아이디</a>&middot;
 				<a href="###" class="" >비밀번호 찾기</a>
     		</div>

@@ -13,4 +13,7 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
+<bean id="memberJoinService" class="Service.Member.MemberJoinService">
+</bean>
+
 </beans>
