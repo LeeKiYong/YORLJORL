@@ -14,5 +14,4 @@
 <bean class="Controller.Main.MainController">
 </bean>
 
-
 </beans>

@@ -17,15 +17,15 @@
 	<div class="mainTop_navigation">
 		<div class="mainTop_nav">
 			<ul>
-				<li><a class="menuLink" href="1">레시피</a></li>
+				<li><a class="menuLink" href="recipeMain">레시피</a></li>
 				<li>|</li>
-				<li><a class="menuLink" href="2">클래스</a></li>
+				<li><a class="menuLink" href="##">클래스</a></li>
 				<li>|</li>
-				<li><a class="menuLink" href="3">쇼핑몰</a></li>
+				<li><a class="menuLink" href="###">쇼핑몰</a></li>
 				<li>|</li>
-				<li><a class="menuLink" href="4">경연대회</a></li>
+				<li><a class="menuLink" href="####">경연대회</a></li>
 				<li>|</li>
-				<li><a class="menuLink" href="5">QnA</a></li>
+				<li><a class="menuLink" href="#####">QnA</a></li>
 			</ul>
 		</div>
 	</div>
