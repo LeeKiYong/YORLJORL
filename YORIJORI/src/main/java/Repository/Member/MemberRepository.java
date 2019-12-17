@@ -28,4 +28,11 @@ public class MemberRepository {
 		result = sqlSession.insert(statement, dto);
 		return result;
 	}
+	
+	//로그인시 아이디 비교확인
+	//입력된 id를 조건으로 주어 해당 id에 모든 데이터를 불러와 DTO 저장
+	public MemberDTO userCheck(MemberDTO dto) {
+		String statement = namespace + ".memCheck";
+		return sqlSession.selectOne(statement, dto);
+	}
 }
