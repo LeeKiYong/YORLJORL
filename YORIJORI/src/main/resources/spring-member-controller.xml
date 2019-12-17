@@ -14,4 +14,7 @@
 <bean class="Controller.Member.MemberJoinController">
 </bean>
 
+<bean class="Controller.Member.MemberLoginController">
+</bean>
+
 </beans>
