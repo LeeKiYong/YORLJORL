@@ -15,5 +15,5 @@
 
 <bean id="memberJoinService" class="Service.Member.MemberJoinService">
 </bean>
-
+<bean id="memberRepository" class="Repository.Member.MemberRepository" />
 </beans>
