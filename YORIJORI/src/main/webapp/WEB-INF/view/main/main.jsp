@@ -154,17 +154,17 @@ $(function () {
     	<div class="main_event&Ad" style="margin-top:30px">
 	    	<div class="div_eventBaner1">
 	    		<a href="#" >
-	    			<img class="img_setting" src="/YORIJORI/images/이벤트예시1.jpg" alt="이벤트배너1" />
+	    			<img class="img_setting" src="/YORIJORI/images/이벤트예시2.jpg" alt="이벤트배너1" />
 	    		</a>	
 	    	</div>
 	    	<div class="div_eventBaner2">
 	    		<a href="##">
-	    			<img class="img_setting" src="/YORIJORI/images/이벤트예시2.jpg" alt="이벤트배너2" />
+	    			<img class="img_setting" src="/YORIJORI/images/이벤트예시3.jpg" alt="이벤트배너2" />
 	    		</a>
 	    	</div>
 	    	<div class="div_adBaner1">
 	    		<a href="###">
-	    			<img  class="img_setting" src="/YORIJORI/images/광고예시1.jpg" alt="광고배너1" />
+	    			<img  class="img_setting" src="/YORIJORI/images/광고예시3.jpg" alt="광고배너1" />
 	    		</a>
 	    	</div>
 	    	<div class="div_adBaner2">
