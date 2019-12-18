@@ -30,6 +30,10 @@
   			classpath:spring-member-beans.xml
   			classpath:spring-member-controller.xml
   			classpath:spring-recipe-controller.xml
+  			
+  			<!-- 공지사항 -->
+  			classpath:spring-notice-controller.xml
+  			classpath:spring-notice-beans.xml
   		</param-value>
   	</init-param>
   	<!-- servlet 읽는 순서  -->
