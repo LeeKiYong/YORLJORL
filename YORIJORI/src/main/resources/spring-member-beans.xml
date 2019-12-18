@@ -24,4 +24,7 @@
 <bean id="memberLoginService" class="Service.Member.MemberLoginService">
 </bean>
 
+<bean id="memberLogoutService" class="Service.Member.MemberLogoutService">
+</bean>
+
 </beans>

@@ -71,7 +71,7 @@
 		<tr>
 			<td width="200">사용자 연락처</td>
 			<td width="400">
-				<form:input path="memPh" id="memPh" size="30" maxlength="28" /><br />
+				<form:input path="memPh" id="memPh" size="30" maxlength="28" placeholder="AAABBBBCCCC"/><br />
 				<div class="errors_message"><form:errors path="memPh" /></div>
 			</td>
 		</tr>
