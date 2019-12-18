@@ -138,18 +138,32 @@ $(function () {
     <!-- 메인 오른쪽 -->
     <div class="div_right">
     	<!-- 로그인 div -->
-    	<div class="main_login" style="margin:5px;">
-    		<p>로그인 버튼을 눌러주세요.</p>
-			<a href="loginForm">
-				<button class="w3-button w3-black w3-round-xlarge" style="width:300px">로그인</button>
-			</a>
-			<div>
-				<a href="register/regist">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="##" class="" >아이디</a>&middot;
-				<a href="###" class="" >비밀번호 찾기</a>
-    		</div>
+    	<div class="login_area" style="margin-top: 5px; border: 2px solid black;">
+	    	<!-- 로그인되지 않았을 때 -->
+	    	<c:if test="${empty authInfo }">
+	    	<div class="main_login" style="margin:5px;">
+	    		<p>로그인 버튼을 눌러주세요.</p>
+				<a href="loginForm">
+					<button class="w3-button w3-black w3-round-xlarge" style="width:290px">로그인</button>
+				</a>
+				<div>
+					<a href="register/regist">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="##" class="" >아이디</a>&middot;
+					<a href="###" class="" >비밀번호 찾기</a>
+	    		</div>
+	    	</div>
+	    	</c:if>
+	    	<!-- 로그인 됬을 때 -->
+	    	<c:if test="${!empty authInfo }">
+	    	<div class="main_loginSuccess">
+	    		<strong>${authInfo.name } 님</strong>
+	    		<div style="text-align:right;">
+	    			<button class="w3-button w3-black w3-round-xlarge" 
+	    			style="width:90px" onclick="location.href='logout'">로그아웃</button>
+	    		</div>
+	    	</div>
+	    	</c:if>
     	</div>
-    	
     	<!-- 광고 및 이벤트 div -->
     	<div class="main_event&Ad" style="margin-top:30px">
 	    	<div class="div_eventBaner1">

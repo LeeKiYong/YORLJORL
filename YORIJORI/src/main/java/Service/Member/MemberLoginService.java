@@ -75,7 +75,7 @@ public class MemberLoginService {
 			idStoreCookie.setMaxAge(0);
 		}
 		
-		//자동로그인 쿠키 생성
+		//자동로그인 쿠키 생성s
 		Cookie autoLoginCookie = new Cookie("autoLogin", loginCommand.getId1());
 		//자동로그인 체크박스 클릭유무 조건문
 		if(loginCommand.getAutoLogin()) {
