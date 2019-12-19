@@ -11,9 +11,6 @@ import Repository.Notice.NoticeRepository;
 @Service
 public class NoticeDetailService {
 	@Autowired
-	NoticeDAO noticeDAO;
-	
-	@Autowired
 	NoticeRepository noticeRepository;
 
 	public void noticeDetail(Model model, Long noticeNum) {
