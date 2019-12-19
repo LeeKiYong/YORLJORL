@@ -13,4 +13,7 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
+<bean id="mainService" class="Service.Main.MainService">
+</bean>
+
 </beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- mapper를 할 시 config >>> mapper로 바꿈 -->
+<!DOCTYPE mapper PUBLIC	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 자신이 지정. -->
+<mapper namespace="ProviderMapper">
+	<cache />
+	<!-- 반복 사용 전체컬럼 설정 -->
+	<!-- 사용시 <include refid="지정id" /> -->
+	<sql id="providerColumn">
+		provider_num,provider_name,provider_ph,provider_email,provider_account,accounts_payable
+	</sql>
+	<!-- ResultMap 설정 PK일 때 id 사용 / 
+	일반컬럼(나머지)일때는 result jdbcType == rs.get타입()과 
+	동일 property == DTO 맴버필드 >> 작성시 dto.setXXXX(rs.get타입("컬럼명")) >>> DB의 데이터를 
+	DTO에 넣는 과정 -->
+	<resultMap type="ProviderDTO" id="providerSelect">
+		<id column="provider_num" jdbcType="BIGINT" property="providerNum" />
+		<result column="provider_name" jdbcType="VARCHAR" property="providerName" />
+		<result column="provider_ph" jdbcType="VARCHAR" property="providerPh" />
+		<result column="provider_email" jdbcType="VARCHAR" property="providerEmail" />
+		<result column="provider_account" jdbcType="BIGINT" property="providerAccount" />
+		<result column="accounts_payable" jdbcType="BIGINT" property="accountsPayable" />
+	</resultMap>
+		<!-- 쿼리문 작성 
+		parameterType >> 데이터를 전달해줄 시 넘겨질 형식?
+		parameterType="Model.DTO.MemberDTO" >> 너무 길다. 줄이기위해 mybatis-config.xml에 별칭 지정 후 사용
+	-->
+	<!-- Type으로 가져오는 데이터 사용 할 때 >>> #{해당DTO맴버필드} -->
+	<insert id="providerInsert" parameterType="providerDTO">
+		insert into provider(<include refid="providerColumn" />)
+		values(#{providerNum}, #{providerName}, #{providerPh}, #{providerEmail}, #{providerAccount}, #{accountsPayable})
+	</insert>
+</mapper>

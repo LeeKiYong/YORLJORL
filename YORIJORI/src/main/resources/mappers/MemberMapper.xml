@@ -45,9 +45,9 @@
 	<!--  *************** Insert *************** -->
 	<!-- 회원가입 -->
 	<insert id="memberInsert" parameterType="memDTO">
-		insert into member( <include refid="baseColumn" />)
-		values ( member_noseq.nextval, #{memId}, #{memPw}, {memName}, {memBirth}, 
-			#{memPh}, #{memEmail}, #{memAddr}, Y )
+		insert into member( <include refid="baseColumn"/> )
+		values ( member_noseq.nextval, #{memId}, #{memPw}, #{memName}, #{memBirth}, 
+		#{memPh}, #{memEmail}, #{memAddr}, 'Y' )
 	</insert>
 	
 	<!--  *************** Update *************** -->

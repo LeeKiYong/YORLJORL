@@ -13,18 +13,12 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
-<!-- MemberRepository 의존객체 -->
-<bean id="memberRepository" class="Repository.Member.MemberRepository">
-</bean>
-
 <!-- Service 의존객체 -->
-<bean id="memberJoinService" class="Service.Member.MemberJoinService">
+<!-- 공급자등록서비스 -->
+<bean id="proRegistService" class="Service.Manager.ProRegistService">
 </bean>
-
-<bean id="memberLoginService" class="Service.Member.MemberLoginService">
-</bean>
-
-<bean id="memberLogoutService" class="Service.Member.MemberLogoutService">
+<!-- 공급자등록서비스 -->
+<bean id="providerRepository" class="Repository.Manager.ProviderRepository">
 </bean>
 
 </beans>

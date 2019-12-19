@@ -13,6 +13,7 @@
 	 -->
 	 <typeAliases>
 	 	<typeAlias type="Model.DTO.MemberDTO" alias="memDTO" />
+	 	<typeAlias type="Model.DTO.ProviderDTO" alias="providerDTO" />
 	 </typeAliases>
 	
 </configuration>

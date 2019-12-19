@@ -26,10 +26,14 @@
   			classpath:spring-context.xml
   			
   			<!-- 각자 만들어짐(내용이) -->
+  			classpath:spring-beans.xml
   			classpath:spring-controller.xml
   			classpath:spring-member-beans.xml
   			classpath:spring-member-controller.xml
   			classpath:spring-recipe-controller.xml
+  			classpath:spring-mart-controller.xml
+  			classpath:spring-manager-controller.xml
+  			classpath:spring-manager-beans.xml
   		</param-value>
   	</init-param>
   	<!-- servlet 읽는 순서  -->

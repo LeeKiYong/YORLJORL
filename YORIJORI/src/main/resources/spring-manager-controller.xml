@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- beans 객체 실행 (의존객체 실행?? / set) -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:context="http://www.springframework.org/schema/context" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -13,18 +11,7 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
-<!-- MemberRepository 의존객체 -->
-<bean id="memberRepository" class="Repository.Member.MemberRepository">
-</bean>
-
-<!-- Service 의존객체 -->
-<bean id="memberJoinService" class="Service.Member.MemberJoinService">
-</bean>
-
-<bean id="memberLoginService" class="Service.Member.MemberLoginService">
-</bean>
-
-<bean id="memberLogoutService" class="Service.Member.MemberLogoutService">
+<bean class="Controller.Manager.ProviderController">
 </bean>
 
 </beans>
