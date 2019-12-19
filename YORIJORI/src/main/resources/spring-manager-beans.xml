@@ -14,7 +14,11 @@
 <context:annotation-config />
 
 <!-- Service 의존객체 -->
+<!-- 공급자등록서비스 -->
 <bean id="proRegistService" class="Service.Manager.ProRegistService">
+</bean>
+<!-- 공급자등록서비스 -->
+<bean id="providerRepository" class="Repository.Manager.ProviderRepository">
 </bean>
 
 </beans>

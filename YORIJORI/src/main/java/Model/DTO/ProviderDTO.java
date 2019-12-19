@@ -1,7 +1,10 @@
-package Command.manager;
+package Model.DTO;
 
-//공급자등록 커맨드
-public class ProRegistCommand {
+import java.io.Serializable;
+
+//직렬화 ??  >> DB와 DTO를 연결 시켜줘야 함  >>SerializableException 이 나올 시
+@SuppressWarnings("serial")
+public class ProviderDTO implements Serializable {
 	private Long providerNum;//사업자 번호
 	private String providerName;//공급자 이름
 	private String providerPh;//공급자 연락처
@@ -46,6 +49,6 @@ public class ProRegistCommand {
 		this.accountsPayable = accountsPayable;
 	}
 	
-	 
 	
+
 }
