@@ -31,6 +31,8 @@
   			classpath:spring-member-beans.xml
   			classpath:spring-member-controller.xml
   			classpath:spring-recipe-controller.xml
+  			classpath:spring-contest-beans.xml
+  			classpath:spring-contest-controller.xml
   		</param-value>
   	</init-param>
   	<!-- servlet 읽는 순서  -->
