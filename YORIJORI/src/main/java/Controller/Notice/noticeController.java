@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Command.Notice.NoticeListCommand;
 import Command.Notice.noticeCommand;
 import Service.Notice.NoticeListService;
 import Service.Notice.NoticeWriteService;
@@ -36,8 +37,8 @@ public class noticeController {
 	
 	//어느 경우든 공지사항 리스트로 이동
 	@RequestMapping("/notice/noticeList")
-	public String noticeList(@RequestParam(value="page", required = false) Integer page, Model model) {
-		noticeListService.getNoticeList(model, page);
+	public String noticeList(@RequestParam(value="page", required = false) Integer page, Model model, NoticeListCommand noticeListCommand) {
+		noticeListService.getNoticeList(model, page, noticeListCommand);
 		return "notice/noticeList";
 	}
 

@@ -1,8 +1,10 @@
 package Model.DTO;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class NoticeDTO {
+@SuppressWarnings("serial")
+public class NoticeDTO implements Serializable {
 	//Notice 테이블 컬럼 값 설정
 	Integer noticeNum;
 	Integer managerNum;

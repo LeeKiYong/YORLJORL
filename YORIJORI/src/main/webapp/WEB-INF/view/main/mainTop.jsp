@@ -21,7 +21,7 @@
 				<li>|</li>
 				<li><a class="menuLink" href="##">클래스</a></li>
 				<li>|</li>
-				<li><a class="menuLink" href="###">쇼핑몰</a></li>
+				<li><a class="menuLink" href="martMain">쇼핑몰</a></li>
 				<li>|</li>
 				<li><a class="menuLink" href="####">경연대회</a></li>
 				<li>|</li>

@@ -11,9 +11,6 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
-<bean id = "noticeRepository" class="Repository.Notice.NoticeRepository"/>
-<bean id = "noticeWriteService" class="Service.Notice.NoticeWriteService"/>
-<bean id = "noticeListService" class="Service.Notice.NoticeListService"/>
-<bean id = "noticeDetailService" class="Service.Notice.NoticeDetailService"/>
+<bean class = "Controller.Mart.MartController"/>
 
 </beans>

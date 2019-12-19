@@ -12,6 +12,8 @@ import org.springframework.jdbc.core.RowMapper;
 
 import Model.DTO.NoticeDTO;
 
+//DAO는 myBatis에서 쓰지 않으나 페이징 처리 때문에 일단 Spring에서 했던 방식으로 처리하고 남겨둠.
+//해결하면 지울 것. 현재 공지사항 게시판 스프링/ 마이바티스 혼재...
 public class NoticeDAO {
 	private JdbcTemplate jdbcTemplate;
 	private String sql;
@@ -36,15 +38,6 @@ public class NoticeDAO {
 	@Autowired
 	public NoticeDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
-	}
-	
-	public void noticeInsert(NoticeDTO noticeDTO) {
-		sql = "insert into notice (" + column + ") values (notice_noseq.nextval,?,?,?,?,?,sysdate)";
-		jdbcTemplate.update(sql, noticeDTO.getManagerNum(),
-				noticeDTO.getNoticeTitle(),
-				noticeDTO.getNoticeContent(),
-				noticeDTO.getNoticeClass(),
-				noticeDTO.getNoticeFn());
 	}
 	
 	public List<NoticeDTO> noticeListAll(int nowPage, int limit) {

@@ -22,7 +22,7 @@
 	<tr align="left" valign="middle" >	
 		<td width="10%" height="29">${notice.class }</td>
 		<td width="40%" height="29">
-			<a href = "answerBoardDetail?num=${notice.noticeNum }">${notice.noticeTitle }
+			<a href = "noticeDetail?num=${notice.noticeNum }">${notice.noticeTitle }
 				<!-- 첨부파일이 있을 경우 제목 옆에 지정이미지 송출. 29*29픽셀..테이블 세로 길이와 맞춘다고 맞췄습니다. 깨질시 삭제. -->
 				<c:if test="${ notice.noticeFn != null }">
 					<img src="https://i.imgur.com/scZbIyY.png" />

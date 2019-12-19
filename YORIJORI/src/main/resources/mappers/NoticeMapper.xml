@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "Repository.Notice.NoticeMapper">
+
+<cache />
+	<sql id="basecolumn">
+		notice_num, manaber_num, notice_title, notice_content, notice_class, notice_fn, notice_date
+	</sql>
+	<!-- ResultMap 설정. -->
+	<resultMap type = "Model.DTO.NoticeDTO" id="notice" >
+		<!-- PK컬럼 -->
+		<id column = "notice_num" jdbcType="BIGINT" property="noticeNum" />
+		<!-- 나머지 컬럼  -->
+		<result column = "notice_title" jdbcType="VARCHAR" property="noticeTitle" />
+		<result column = "notice_content" jdbcType="VARCHAR" property="noticeContent"/>
+		<result column = "notice_class" jdbcType="VARCHAR" property="noticeClass"/>
+		<result column = "notice_fn" jdbcType="VARCHAR" property="noticeFn"/>
+		<result column = "notice_date" jdbcType="TIMESTAMP" property="noticeDate"/>
+	</resultMap>
+	
+	<!-- 공지글 등록 insert -->
+	<insert id = "noticeInsert" parameterType="Model.DTO.NoticeDTO">
+		insert into notice( <include refid="notice"/> )
+		values ( notice_noseq.nextval, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn}, sysdate )
+	</insert>
+	
+	<!-- 공지글 상세보기 셀렉트 -->
+	<select resultMap = "notice" id = "noticeDetail" parameterType = "string">
+		select <include refid="notice" /> from notice
+		<where>
+			notice_num = #{noticeNum}
+		</where>
+	</select>
+	
+	<!-- 공지글 리스트 셀렉트 -->
+	<select resultMap="notice" id = "noticeList" parameterType = "string">
+		select <include refid = "notice" /> from notice
+	</select>
+	
+	<!-- 페이징을 위한 공지글 카운트 -->
+	<select resultMap="notice" id = "noticeCount" parameterType = "int" >
+		select <include refid = "notice" /> from notice
+	</select>
+	
+	<!-- 공지글 수정 update -->
+	
+	<!-- 공지글 삭제 delete -->
+	
+</mapper>

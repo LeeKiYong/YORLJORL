@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- beans 객체 실행 (의존객체 실행?? / set) -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:context="http://www.springframework.org/schema/context" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -11,9 +13,12 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
-<bean id = "noticeRepository" class="Repository.Notice.NoticeRepository"/>
-<bean id = "noticeWriteService" class="Service.Notice.NoticeWriteService"/>
-<bean id = "noticeListService" class="Service.Notice.NoticeListService"/>
-<bean id = "noticeDetailService" class="Service.Notice.NoticeDetailService"/>
+<!-- Service 의존객체 -->
+<!-- 공급자등록서비스 -->
+<bean id="proRegistService" class="Service.Manager.ProRegistService">
+</bean>
+<!-- 공급자등록서비스 -->
+<bean id="providerRepository" class="Repository.Manager.ProviderRepository">
+</bean>
 
 </beans>

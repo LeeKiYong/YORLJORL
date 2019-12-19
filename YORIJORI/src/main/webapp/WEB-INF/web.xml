@@ -35,6 +35,10 @@
   			<!-- 공지사항 -->
   			classpath:spring-notice-controller.xml
   			classpath:spring-notice-beans.xml
+  			
+  			classpath:spring-mart-controller.xml
+  			classpath:spring-manager-controller.xml
+  			classpath:spring-manager-beans.xml
   		</param-value>
   	</init-param>
   	<!-- servlet 읽는 순서  -->

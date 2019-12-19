@@ -6,15 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import Command.Notice.NoticeListCommand;
 import Model.DAO.NoticeDAO;
 import Model.DTO.NoticeDTO;
+import Repository.Notice.NoticeRepository;
 
 @Service
 public class NoticeListService {
 	@Autowired
-	private NoticeDAO noticeDAO;
+	private NoticeRepository noticeRepository;
 
-	public void getNoticeList(Model model, Integer page) {
+	public void getNoticeList(Model model, Integer page, NoticeListCommand noticeListCommand) {
 		int nowPage = 1;
 		if(page != null) {
 			nowPage = page;
@@ -24,8 +26,8 @@ public class NoticeListService {
 		//페이지 번호 출력 갯수
 		int limitPage = 10;
 		
-		List<NoticeDTO> notice = noticeDAO.noticeListAll(nowPage, limit);
-		int totalCount = noticeDAO.getNoticeCount();
+		List<NoticeDTO> notice = noticeRepository.noticeListAll(nowPage, limit, noticeListCommand);
+		int totalCount = noticeRepository.getNoticeCount();
 		//최대페이지
 		int maxPage = (int)((double)totalCount/limit + 0.95);
 		//시작페이지
@@ -34,6 +36,7 @@ public class NoticeListService {
 		int endPage = startPage + limitPage -1;
 		
 		if(endPage > maxPage) endPage = maxPage;
+		
 		model.addAttribute("notice", notice);
 		model.addAttribute("totalCount", totalCount);
 		model.addAttribute("maxPage", maxPage);

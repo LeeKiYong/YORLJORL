@@ -11,21 +11,22 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import Command.Notice.noticeCommand;
-import Model.DAO.NoticeDAO;
 import Model.DTO.NoticeDTO;
+import Repository.Notice.NoticeRepository;
 
 @Service
 public class NoticeWriteService {
 	@Autowired
-	NoticeDAO noticeDAO;
+	NoticeRepository noticeRepository;
 	
 	String origin = null;
 	String originFe = null;
 	String store = null;
 
-	public void noticeWrite(noticeCommand noticeCommand, HttpServletRequest request) {
+	public Integer noticeWrite(noticeCommand noticeCommand, HttpServletRequest request) {
 		NoticeDTO notice = new NoticeDTO();
 		
+		//여기서부터
 		notice.setNoticeTitle(noticeCommand.getNoticeTitle());
 		notice.setNoticeContent(noticeCommand.getNoticeContent());
 		notice.setNoticeClass(noticeCommand.getNoticeClass());
@@ -56,8 +57,9 @@ public class NoticeWriteService {
 			}
 		}
 		notice.setNoticeFn(original);
-		
-		noticeDAO.noticeInsert(notice);
+		//여기까지
+		Integer result = noticeRepository.noticeInsert(notice);
+		return result;
 	}
 
 }
