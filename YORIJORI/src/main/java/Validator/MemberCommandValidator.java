@@ -28,11 +28,17 @@ public class MemberCommandValidator implements Validator {
 			"^\\d{4}-\\d{2}-\\d{2}$";
 	private Pattern birthPattern;
 	
+	//연락처입력 정규표현식(패턴) 검사
+	private static final String phRegExp = 
+			"^01(?:0|1|[6-9])(\\d{3}|\\d{4})(\\d{4})$";
+	private Pattern phPattern;
+	
 	//패턴 정하고 정규표현식 초기화 시켜주기 위해.  >> 생성자 생성
 	//생성자 생성
 	public MemberCommandValidator() {
 		emailPattern = Pattern.compile(emailRegExp);
 		birthPattern = Pattern.compile(birthRegExp);
+		phPattern = Pattern.compile(phRegExp);
 	}
 	
 	public boolean supports(Class<?> clazz) {
@@ -46,7 +52,7 @@ public class MemberCommandValidator implements Validator {
 		MemberCommand memCmd = (MemberCommand)target;
 		
 		//command 이메일 불러와 조건문 생성
-		//memCmd.getUserEmail().trim().isEmpty() >> trim 공백 확인 / isEmpty 값이 비어있는지
+		//memCmd.getMemEmail().trim().isEmpty() >> trim 공백 확인 / isEmpty 값이 비어있는지
 		if(memCmd.getMemEmail() == null || memCmd.getMemEmail().trim().isEmpty()) {
 			errors.rejectValue("memEmail", "required");
 		} else {
@@ -62,7 +68,7 @@ public class MemberCommandValidator implements Validator {
 		}
 		
 		//command 생년월일 불러와 조건문 생성
-		//memCmd.getUserBirth().trim().isEmpty() >> trim 공백 확인 / isEmpty 값이 비어있는지
+		//memCmd.getMemBirth().trim().isEmpty() >> trim 공백 확인 / isEmpty 값이 비어있는지
 		if(memCmd.getMemBirth() == null || memCmd.getMemBirth().trim().isEmpty()) {
 			errors.rejectValue("memBirth", "required");
 		} else {
@@ -77,13 +83,28 @@ public class MemberCommandValidator implements Validator {
 			}
 		}
 		
+		//command 생년월일 불러와 조건문 생성
+		//memCmd.getMemPh().trim().isEmpty() >> trim 공백 확인 / isEmpty 값이 비어있는지
+		if(memCmd.getMemPh() == null || memCmd.getMemPh().trim().isEmpty()) {
+			errors.rejectValue("memPh", "required");
+		} else {
+			//비어있지 않을 때 or null이 아닐 때 >>> 패턴을 비교해서 맞는지 확인.
+			//Matcher >>> return false or true
+			//pattern의 정규화 표현식과  command에 저장된 ph의 표현식 비교
+			Matcher matcher = phPattern.matcher(memCmd.getMemPh());
+			if(!matcher.matches()) {
+				//matcher.matches() >> true  / !matcher.matches() >> false
+				//정규화식이 다를 때
+				errors.rejectValue("memPh", "bad2");
+			}
+		}
+		
 		//나머지 폼 입력창에서 필수항목 입력하지 않았을 때 에러메세지 출력.
 		//ValidationUtils errors 대신 사용 >>>> errors 인자 값으로 사용 해야함.
 		//== errors.rejectValue("필드명", "에러메세지 출력변수")
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "memName", "required");
 		ValidationUtils.rejectIfEmpty(errors, "memPw", "required");
 		ValidationUtils.rejectIfEmpty(errors, "memId", "required");
-		ValidationUtils.rejectIfEmpty(errors, "memPh", "required");
 		ValidationUtils.rejectIfEmpty(errors, "memAddr", "required");
 		ValidationUtils.rejectIfEmpty(errors, "memPwCon", "required");
 		

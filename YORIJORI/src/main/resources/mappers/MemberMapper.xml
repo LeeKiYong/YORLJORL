@@ -7,5 +7,63 @@
 <!-- namespace는 자신이 지정. -->	
 <mapper namespace="MemberMapper">
 	<cache />
-
+	
+	<!-- 반복 사용 전체컬럼 설정 -->
+	<!-- 사용시 <include refid="지정id" /> -->
+	<sql id="baseColumn">
+		mem_num, mem_id, mem_pw, mem_name, mem_birth, mem_ph, mem_email,
+		mem_addr, mem_yorn
+	</sql>
+	
+	<!-- ResultMap 설정
+		테이블의 컬럼이 PK일 때 id column 사용 / 나머지컬럼 일 때 result column 사용
+		jdbcType == DB 테이블 타입(jdbc에서의 rs.get타입() 과 비슷)
+		property >> select 후 데이터가 들어갈 각각의 DTO의 멤버 필드명 
+		>>>> 결국 ResultMap 이란?? >> 작성시 jdbc의 dto.setXXX(rs.getXXX("컬럼명")) 과 비슷
+		DB의 데이터를 DTO에 넣는 과정 -->
+	<resultMap type="MemDTO" id="baseMember">
+		<!-- PK(회원번호) -->
+		<id column="mem_num" jdbcType="BIGINT" property="memNum" />
+		<!-- 나머지 -->
+		<result column="mem_id" jdbcType="VARCHAR" property="memId" />
+		<result column="mem_pw" jdbcType="VARCHAR" property="memPw" />
+		<result column="mem_name" jdbcType="VARCHAR" property="memName" />
+		<result column="mem_birth" jdbcType="TIMESTAMP" property="memBirth" />
+		<result column="mem_ph" jdbcType="VARCHAR" property="memPh" />
+		<result column="mem_email" jdbcType="VARCHAR" property="memEmail" />
+		<result column="mem_addr" jdbcType="VARCHAR" property="memAddr" />
+		<result column="mem_yorn" jdbcType="VARCHAR" property="memYorn" />
+	</resultMap>
+	
+	
+	<!-- 쿼리문 작성 
+		parameterType >> 데이터를 전달해줄 시 넘겨질 형식?
+		parmeterType="Model.DTO.MemberDTO" >> 너무 길다. 줄이기위해 mybatis-config.xml에 별칭 지정 후 사용
+	-->
+	<!-- Type으로 가져오는 데이터 사용 할 때 >>> #{해당DTO맴버필드} -->
+	
+	<!--  *************** Insert *************** -->
+	<!-- 회원가입 -->
+	<insert id="memberInsert" parameterType="memDTO">
+		insert into member( <include refid="baseColumn" />)
+		values ( member_noseq.nextval, #{memId}, #{memPw}, {memName}, {memBirth}, 
+			#{memPh}, #{memEmail}, #{memAddr}, Y )
+	</insert>
+	
+	<!--  *************** Update *************** -->
+	<!--  *************** Delete *************** -->
+	<!--  *************** Select *************** -->
+	<!-- 아이디비교확인(where mem_id=?) -->
+	<!-- select할 시 baseMember(resultMap)에 값 저장  >> 받아올 값의 타입?? -->
+	<!-- prefix="where" >>> 첫 접두사 where
+		suffixOverrides="and |or" >>> 접미사에 and / or 있다면 재정의해라 -->
+	<select id="memCheck" parameterType="memDTO" resultMap="baseMember">
+		select <include refid="baseColumn" /> from member
+		<trim prefix="where" prefixOverrides="and |or ">
+			<if test="memPw != null">
+				mem_pw=#{memPw}
+			</if>
+		and mem_id=#{memId}
+		</trim>
+	</select>
 </mapper>

@@ -13,10 +13,10 @@
 	<jsp:include page="../main/mainTop.jsp" />
 </div>
 <div style="border: 2px solid black; width:70%; height:40%; margin: 5px;">
-<form:form action="memberJoinAction" name="frm" id="frm" method="post" commandName="recipeRegisterCommand">
+<form action="memberJoinAction" name="frm" id="frm" method="post" commandName="recipeRegisterCommand">
 	<form:input path = "recipeName" size = "50" /><br />
 	<div class = ""><form:errors path = "recipeName" /></div>
-</form:form>
+</form>
 </div>
 </body>
 </html>

@@ -43,6 +43,9 @@
 			</p>
 		</div>
 	</div>
+	<div style="right: 0px; bottom: 0px; color: #2d2d2d;">		
+	<a href = "">관리자만 누르세요ㅎㅎ</a>
+	</div>
 </div>
 </body>
 </html>

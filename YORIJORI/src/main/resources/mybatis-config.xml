@@ -11,5 +11,8 @@
 	<!-- <typeAlias type="Model.DTO.MemberDTO" alias="memDTO" />
 		type="사용 할 형에대한 경로" alias="지정할 별칭"
 	 -->
+	 <typeAliases>
+	 	<typeAlias type="Model.DTO.MemberDTO" alias="memDTO" />
+	 </typeAliases>
 	
 </configuration>
