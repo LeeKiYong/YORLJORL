@@ -1,8 +1,11 @@
 package Repository.Manager;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
 import Model.DTO.ProviderDTO;
 
@@ -22,9 +25,16 @@ public class ProviderRepository {
 		Integer result = null;
 		//Mapper에 있는 id 경로 
 		String statement = namespace + ".providerInsert";//mapper에 있는 insert를 찾아서 실행
-		//sqlsession 사용 (insert, update, delete)  >>> Mapper에 지정한 쿼리문 읽어옴.
 		result = sqlSession.insert(statement,providerDTO);
 		return result;
+	}
+
+	public List<ProviderDTO> providerSelect() {
+		List<ProviderDTO> list = null;
+		//Mapper에 있는 id 경로 
+		String statement = namespace + ".providerSelect";//mapper에 있는 select를 찾아서 실행
+		list = sqlSession.selectList(statement);
+		return list;
 	}
 
 }

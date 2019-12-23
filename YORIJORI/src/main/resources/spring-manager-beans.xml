@@ -17,8 +17,11 @@
 <!-- 공급자등록서비스 -->
 <bean id="proRegistService" class="Service.Manager.ProRegistService">
 </bean>
-<!-- 공급자등록서비스 -->
+<!-- 공급자등록repository -->
 <bean id="providerRepository" class="Repository.Manager.ProviderRepository">
+</bean>
+<!-- 공급자목록서비스 -->
+<bean id="proListService" class="Service.Manager.ProListService">
 </bean>
 
 </beans>

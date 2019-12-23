@@ -17,7 +17,7 @@
 	일반컬럼(나머지)일때는 result jdbcType == rs.get타입()과 
 	동일 property == DTO 맴버필드 >> 작성시 dto.setXXXX(rs.get타입("컬럼명")) >>> DB의 데이터를 
 	DTO에 넣는 과정 -->
-	<resultMap type="ProviderDTO" id="providerSelect">
+	<resultMap type="ProviderDTO" id="provider">
 		<id column="provider_num" jdbcType="BIGINT" property="providerNum" />
 		<result column="provider_name" jdbcType="VARCHAR" property="providerName" />
 		<result column="provider_ph" jdbcType="VARCHAR" property="providerPh" />
@@ -34,4 +34,7 @@
 		insert into provider(<include refid="providerColumn" />)
 		values(#{providerNum}, #{providerName}, #{providerPh}, #{providerEmail}, #{providerAccount}, #{accountsPayable})
 	</insert>
+	<select id="providerSelect" parameterType="providerDTO" resultMap="provider">
+		select <include refid="providerColumn" /> from provider 
+	</select>
 </mapper>
