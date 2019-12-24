@@ -56,13 +56,13 @@
 		<a href="noticeList?page=${ page -1}">[이전]</a>
 	</c:if>
 	<c:forEach var="i" begin="${startPage }" end="${endPage }"  step="1">
-		<a href="noticeBoardList?page=${ i}">[${ i}]&nbsp;</a>
+		<a href="noticeList?page=${ i}">[${ i}]&nbsp;</a>
 	</c:forEach>
 	<c:if test="${page >= maxPage }">
 	[이후]&nbsp;
 	</c:if>
 	<c:if test="${page < maxPage }">
-	<a href="noticeBoardList?page=${ page +1}">[이후]</a>
+	<a href="noticeList?page=${ page +1}">[이후]</a>
 	</c:if>
 	</td>
 </tr>
