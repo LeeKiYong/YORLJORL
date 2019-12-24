@@ -24,7 +24,7 @@ public class noticeController {
 	
 	//리스트에서 공지글 쓰기 버튼을 눌렀을 때
 	@RequestMapping("/noticeWrite")
-	public String noticeWrite() {
+	public String noticeWrite(NoticeCommand noticeCommand) {
 		return "notice/noticeWrite";
 	}
 	
@@ -39,7 +39,7 @@ public class noticeController {
 	//어느 경우든 공지사항 리스트로 이동
 	@RequestMapping("/noticeList")
 	public String noticeList(@RequestParam(value="page", required = false) Integer page, Model model, NoticeListCommand noticeListCommand) {
-		noticeListService.getNoticeList(model, page, noticeListCommand);
+		noticeListService.getNoticeList(page, model, noticeListCommand);
 		return "notice/noticeList";
 	}
 

@@ -28,16 +28,18 @@ public class NoticeWriteService {
 	public Integer noticeWrite(NoticeCommand noticeCommand, HttpServletRequest request) {
 		NoticeDTO notice = new NoticeDTO();
 		
+		//값을 받아오는지 콘솔 테스트
+		/*
+		System.out.println(noticeCommand.getNoticeTitle());
+		System.out.println(noticeCommand.getNoticeContent());
+		System.out.println(noticeCommand.getNoticeClass());
+		*/
+		
 		notice.setNoticeTitle(noticeCommand.getNoticeTitle());
 		notice.setNoticeContent(noticeCommand.getNoticeContent());
 		notice.setNoticeClass(noticeCommand.getNoticeClass());
 		
 		//String original = "";  파일 업로드를 현재 제외하였으므로 주석처리합니다.
-		
-		//값을 받아오는지 콘솔 테스트
-		System.out.println(noticeCommand.getNoticeTitle());
-		System.out.println(noticeCommand.getNoticeContent());
-		System.out.println(noticeCommand.getNoticeClass());
 		
 		//파일을 여러 개 넣었을 때 이름값을 저장하기 위한 부분이었지만 파일 업로드를 현재 제외하였으므로 주석처리합니다.
 		/*

@@ -13,8 +13,8 @@ public class noticeDetailController {
 	@Autowired
 	NoticeDetailService noticeDetailService;
 	
-	@RequestMapping("/notice/noticeDetail")
-	public String noticeDetail(@RequestParam(value="noticeNum") Long noticeNum, Model model) {
+	@RequestMapping("/noticeDetail")
+	public String noticeDetail(@RequestParam("num") Integer noticeNum, Model model) {
 		noticeDetailService.noticeDetail(model, noticeNum);
 		
 		return "notice/noticeDetail";

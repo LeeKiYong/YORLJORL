@@ -9,7 +9,7 @@
 <title>공지 글쓰기</title>
 </head>
 <body>
-<form:form action="noticeWritePro" method="post" enctype="multipart/form-data" commandName="noticeCommand">
+<form:form action="noticeWritePro" name="noticefrm" id = "noticefrm" method="post" commandName="noticeCommand">
      <table cellpadding="0" cellspacing="0" > 
      	<tr>
 			<td style="font-size:12" height="16" > 

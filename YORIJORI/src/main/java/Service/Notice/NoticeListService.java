@@ -15,7 +15,7 @@ public class NoticeListService {
 	@Autowired
 	private NoticeRepository noticeRepository;
 
-	public void getNoticeList(Model model, Integer page, NoticeListCommand noticeListCommand) {
+	public void getNoticeList(Integer page, Model model, NoticeListCommand noticeListCommand) {
 		int nowPage = 1;
 		if(page != null) {
 			nowPage = page;
