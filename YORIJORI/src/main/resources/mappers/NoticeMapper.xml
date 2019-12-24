@@ -4,11 +4,11 @@
 <mapper namespace = "NoticeMapper">
 
 <cache />
-	<sql id="noticeSql">
+	<sql id="basecolumn">
 		notice_num, manaber_num, notice_title, notice_content, notice_class, notice_fn, notice_date
 	</sql>
 	<!-- ResultMap 설정. -->
-	<resultMap type = "Model.DTO.NoticeDTO" id="basecolumn" >
+	<resultMap type = "Model.DTO.NoticeDTO" id="noticeSQL" >
 		<!-- PK컬럼 -->
 		<id column = "notice_num" jdbcType="BIGINT" property="noticeNum" />
 		<!-- 나머지 컬럼  -->
@@ -26,7 +26,7 @@
 	</insert>
 	
 	<!-- 공지글 상세보기 셀렉트 -->
-	<select resultMap = "basecolumn" id = "noticeDetail" parameterType = "string">
+	<select resultMap = "noticeSQL" id = "noticeDetail" parameterType = "string">
 		select <include refid="basecolumn" /> from notice
 		<where>
 			notice_num = #{noticeNum}
@@ -34,12 +34,12 @@
 	</select>
 	
 	<!-- 공지글 리스트 셀렉트 -->
-	<select resultMap="basecolumn" id = "noticeList" parameterType = "string">
+	<select resultMap="noticeSQL" id = "noticeList" parameterType = "string">
 		select <include refid = "basecolumn" /> from notice
 	</select>
 	
 	<!-- 페이징을 위한 공지글 카운트 -->
-	<select resultMap="basecolumn" id = "noticeCount" parameterType = "int" >
+	<select resultMap="noticeSQL" id = "noticeCount" parameterType = "int" >
 		select <include refid = "basecolumn" /> from notice
 	</select>
 	
