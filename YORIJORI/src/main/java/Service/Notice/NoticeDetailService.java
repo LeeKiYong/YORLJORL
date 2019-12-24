@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import Model.DAO.NoticeDAO;
 import Model.DTO.NoticeDTO;
 import Repository.Notice.NoticeRepository;
 

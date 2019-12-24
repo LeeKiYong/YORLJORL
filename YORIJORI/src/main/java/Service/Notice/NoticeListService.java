@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import Command.Notice.NoticeListCommand;
-import Model.DAO.NoticeDAO;
 import Model.DTO.NoticeDTO;
 import Repository.Notice.NoticeRepository;
 

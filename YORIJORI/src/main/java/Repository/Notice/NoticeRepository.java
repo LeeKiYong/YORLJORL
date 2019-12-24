@@ -15,7 +15,7 @@ public class NoticeRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private final String namespace = "Repository.Notice.NoticeMapper";
+	private final String namespace = "NoticeMapper";
 	
 	public Integer noticeInsert(NoticeDTO noticeDTO) {
 		String statement = namespace + ".noticeInsert";
