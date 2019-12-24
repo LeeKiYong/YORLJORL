@@ -5,7 +5,7 @@
 
 <cache />
 	<sql id="basecolumn">
-		notice_num, manaber_num, notice_title, notice_content, notice_class, notice_fn, notice_date
+		notice_num, manager_num, notice_title, notice_content, notice_class, notice_fn, notice_date
 	</sql>
 	<!-- ResultMap 설정. -->
 	<resultMap type = "Model.DTO.NoticeDTO" id="noticeSQL" >
