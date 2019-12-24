@@ -2,7 +2,7 @@ package Command.Notice;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class noticeCommand {
+public class NoticeCommand {
 	//noticeWrite 에서 입력한 값을 설정
 	private String noticeClass;
 	private String noticeTitle;

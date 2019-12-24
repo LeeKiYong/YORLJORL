@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Notice.NoticeListCommand;
-import Command.Notice.noticeCommand;
+import Command.Notice.NoticeCommand;
 import Service.Notice.NoticeListService;
 import Service.Notice.NoticeWriteService;
 
@@ -29,7 +29,7 @@ public class noticeController {
 	
 	//공지글쓰기 페이지에서 등록 버튼을 눌렀을 때
 	@RequestMapping(value="/noticeWritePro", method = RequestMethod.POST)
-	public String write(noticeCommand noticeCommand, HttpServletRequest request) {
+	public String write(NoticeCommand noticeCommand, HttpServletRequest request) {
 		noticeWriteService.noticeWrite(noticeCommand, request );
 		return "redirect:/notice/noticeList";
 		

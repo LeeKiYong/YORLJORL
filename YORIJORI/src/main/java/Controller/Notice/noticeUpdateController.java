@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import Command.Notice.noticeCommand;
+import Command.Notice.NoticeCommand;
 import Service.Notice.NoticeUpdateService;
 
 @Controller
@@ -22,7 +22,7 @@ public class noticeUpdateController {
 	}
 	
 	@RequestMapping(value="/notice/noticeUpdatePro", method = RequestMethod.POST)
-	public String noticeUp(noticeCommand noticeCommand, HttpServletRequest request) {
+	public String noticeUp(NoticeCommand noticeCommand, HttpServletRequest request) {
 		noticeUpdateService.noticeUpdate(noticeCommand, request);
 		return "notice/noticeDetail";
 	}

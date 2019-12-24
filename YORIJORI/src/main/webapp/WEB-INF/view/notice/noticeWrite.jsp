@@ -36,7 +36,7 @@
 				<div align="center">내 용</div>
 			</td>
 			<td>
-				<textarea name = noticeContent cols="80" rows="100" ></textarea>
+				<textarea name = noticeContent cols="80" rows="50" ></textarea>
 			</td>
 		</tr>
 		<tr>

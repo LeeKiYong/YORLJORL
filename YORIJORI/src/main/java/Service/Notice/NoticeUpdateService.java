@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import Command.Notice.noticeCommand;
+import Command.Notice.NoticeCommand;
 import Model.DTO.NoticeDTO;
 import Repository.Notice.NoticeRepository;
 
@@ -14,7 +14,7 @@ public class NoticeUpdateService {
 	@Autowired
 	NoticeRepository noticeRepository;
 
-	public Integer noticeUpdate(noticeCommand noticeCommand, HttpServletRequest request) {
+	public Integer noticeUpdate(NoticeCommand noticeCommand, HttpServletRequest request) {
 		NoticeDTO notice = new NoticeDTO();
 		
 		notice.setNoticeTitle(noticeCommand.getNoticeTitle());
