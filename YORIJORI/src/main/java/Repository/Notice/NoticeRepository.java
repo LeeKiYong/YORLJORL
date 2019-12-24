@@ -40,7 +40,7 @@ public class NoticeRepository {
 	}
 
 	//이게 맞을까? 페이징을 위한 카운트세는거. 일단 적어두고 물어보기.
-	public int getNoticeCount() {
+	public Integer getNoticeCount() {
 		String statement = namespace + ".noticeCount";
 		int result = sqlSession.selectOne(statement);
 		return result;

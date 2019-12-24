@@ -27,6 +27,7 @@ public class NoticeListService {
 		
 		List<NoticeDTO> notice = noticeRepository.noticeListAll(nowPage, limit, noticeListCommand);
 		int totalCount = noticeRepository.getNoticeCount();
+		
 		//최대페이지
 		int maxPage = (int)((double)totalCount/limit + 0.95);
 		//시작페이지

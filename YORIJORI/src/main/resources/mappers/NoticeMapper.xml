@@ -40,7 +40,7 @@
 	
 	<!-- 페이징을 위한 공지글 카운트 -->
 	<select resultMap="noticeSQL" id = "noticeCount" parameterType = "int" >
-		select <include refid = "basecolumn" /> from notice
+		select count(*) from notice
 	</select>
 	
 	<!-- 공지글 수정 update -->
