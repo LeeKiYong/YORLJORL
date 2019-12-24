@@ -35,7 +35,7 @@ public class noticeController {
 						@RequestParam(value="noticeFn") MultipartFile [] noticeFn,
 						HttpServletRequest request) {
 		noticeWriteService.noticeWrite(noticeClass, noticeTitle, noticeContent, noticeFn, request );
-		return "redirect:/notice/noticeList";
+		return "redirect:/noticeList";
 		
 	}
 	
