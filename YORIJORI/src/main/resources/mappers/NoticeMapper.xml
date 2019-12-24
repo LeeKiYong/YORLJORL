@@ -22,7 +22,7 @@
 	<!-- 공지글 등록 insert -->
 	<insert id = "noticeInsert" parameterType="Model.DTO.NoticeDTO">
 		insert into notice( <include refid="basecolumn"/> )
-		values ( notice_noseq.nextval, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn}, sysdate )
+		values ( notice_noseq.nextval, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn, jdbcType=VARCHAR}, sysdate )
 	</insert>
 	
 	<!-- 공지글 상세보기 셀렉트 -->

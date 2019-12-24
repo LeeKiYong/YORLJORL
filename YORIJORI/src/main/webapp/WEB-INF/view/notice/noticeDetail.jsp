@@ -27,7 +27,7 @@
 		<td style = "font-size:12" height = "16">내용</td>
 		<td style = "font-size:12">${notice.noticeContent }</td>
 	</tr>
-	<!-- 이부분~~~~~~~
+	<!-- 파일 없애 없애없애
 	<tr align="center" valign="middle">
 		<td style = "font-size:12" height="16" >파일</td>
 		<td style = "font-size:12">

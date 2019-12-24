@@ -26,8 +26,6 @@
 				<li><a class="menuLink" href="####">경연대회</a></li>
 				<li>|</li>
 				<li><a class="menuLink" href="#####">QnA</a></li>
-				<li>|</li>
-				<li><a class="menuLink" href="noticeList">임시공지</a></li>
 			</ul>
 		</div>
 	</div>

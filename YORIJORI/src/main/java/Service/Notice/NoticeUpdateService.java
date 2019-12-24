@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import Command.Notice.NoticeCommand;
 import Model.DTO.NoticeDTO;
 import Repository.Notice.NoticeRepository;
 
@@ -14,13 +15,19 @@ public class NoticeUpdateService {
 	@Autowired
 	NoticeRepository noticeRepository;
 
-	public Integer noticeUpdate(String noticeClass, String noticeTitle, String noticeContent, MultipartFile[] noticeFn, HttpServletRequest request) {
+	public Integer noticeUpdate(NoticeCommand noticeCommand, HttpServletRequest request) {
 		NoticeDTO notice = new NoticeDTO();
 		
-		notice.setNoticeTitle(noticeTitle);
-		notice.setNoticeContent(noticeContent);
-		notice.setNoticeClass(noticeClass);
+		//값을 잘 받아오는지 테스트
+		System.out.println(noticeCommand.getNoticeTitle());
+		System.out.println(noticeCommand.getNoticeContent());
+		System.out.println(noticeCommand.getNoticeClass());
 		
+		notice.setNoticeTitle(noticeCommand.getNoticeTitle());
+		notice.setNoticeContent(noticeCommand.getNoticeContent());
+		notice.setNoticeClass(noticeCommand.getNoticeClass());
+		
+		//업데이트 메소드 실행
 		Integer result = noticeRepository.noticeUpdate(notice);
 		return result;
 		

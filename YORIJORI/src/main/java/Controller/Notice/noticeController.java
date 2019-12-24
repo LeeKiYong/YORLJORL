@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import Command.Notice.NoticeCommand;
 import Command.Notice.NoticeListCommand;
 import Service.Notice.NoticeListService;
 import Service.Notice.NoticeWriteService;
@@ -29,12 +30,8 @@ public class noticeController {
 	
 	//공지글쓰기 페이지에서 등록 버튼을 눌렀을 때
 	@RequestMapping(value="/noticeWritePro", method = RequestMethod.POST)
-	public String write(@RequestParam(value="noticeClass") String noticeClass, 
-						@RequestParam(value="noticeTitle")String noticeTitle, 
-						@RequestParam(value="noticeContent") String noticeContent,
-						@RequestParam(value="noticeFn") MultipartFile [] noticeFn,
-						HttpServletRequest request) {
-		noticeWriteService.noticeWrite(noticeClass, noticeTitle, noticeContent, noticeFn, request );
+	public String write(NoticeCommand noticeCommand, HttpServletRequest request) {
+		noticeWriteService.noticeWrite(noticeCommand, request );
 		return "redirect:/noticeList";
 		
 	}

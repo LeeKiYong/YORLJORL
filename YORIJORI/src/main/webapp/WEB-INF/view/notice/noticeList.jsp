@@ -37,7 +37,7 @@
 </c:if>
 <c:if test="${ empty boards }">
 	<tr align="center" valign="middle" >
-		<td align=right colspan="2">
+		<td align=left colspan="2">
 			<font size=2>등록된 글이 없습니다.</font>
 		</td>
 	</tr>
