@@ -39,7 +39,7 @@
 	</select>
 	
 	<!-- 페이징을 위한 공지글 카운트 -->
-	<select resultMap="noticeSQL" id = "noticeCount" parameterType = "int" >
+	<select resultMap="noticeSQL" id = "noticeCount" resultType = "int" >
 		select count(*) from notice
 	</select>
 	
