@@ -15,5 +15,7 @@
 <bean id = "noticeWriteService" class="Service.Notice.NoticeWriteService"/>
 <bean id = "noticeListService" class="Service.Notice.NoticeListService"/>
 <bean id = "noticeDetailService" class="Service.Notice.NoticeDetailService"/>
+<bean id = "noticeDeleteService" class="Service.Notice.NoticeDeleteService"/>
+<bean id = "noticeUpdateService" class="Service.Notice.NoticeUpdateService"/>
 
 </beans>

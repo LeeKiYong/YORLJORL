@@ -45,5 +45,19 @@ public class NoticeRepository {
 		int result = sqlSession.selectOne(statement);
 		return result;
 	}
+	
+	//삭제를 위한 메소드...ㅇ인데 인티져로 하는게 맞을까?
+	public Integer noticeDelete(int noticeNum) {
+		String statement = namespace + ".noticeDelete";
+		int result = sqlSession.delete(statement);
+		return result;
+	}
+	
+	//수정 메소드
+	public Integer noticeUpdate(NoticeDTO notice) {
+		String statement = namespace + ".noticeUpdate";
+		int result = sqlSession.update(statement);
+		return result;
+	}
 
 }

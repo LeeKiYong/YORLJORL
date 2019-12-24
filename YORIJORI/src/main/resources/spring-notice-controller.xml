@@ -12,5 +12,7 @@
 
 <bean class = "Controller.Notice.noticeController" />
 <bean class = "Controller.Notice.noticeDetailController" />
+<bean class = "Controller.Notice.noticeDeleteController" />
+<bean class = "Controller.Notice.noticeUpdateController" />
 
 </beans>
