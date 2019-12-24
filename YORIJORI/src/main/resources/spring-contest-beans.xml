@@ -13,4 +13,19 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
+<!-- ContestRepository 의존 객체 -->
+<bean id="contestRepository" class="Repository.Contest.ContestRepository">
+</bean>
+
+<!-- ParticipationRepository 의존 객체 -->
+<bean id="participationRepository" class="Repository.Participation.ParticipationRepository" >
+</bean>
+
+<!-- Service 의존 객체 -->
+<bean id="contestCreateService" class="Service.Contest.ContestCreateService">
+</bean>
+
+<bean id="participationInsertService" class="Service.Contest.ParticipationInsertService">
+</bean>
+
 </beans>

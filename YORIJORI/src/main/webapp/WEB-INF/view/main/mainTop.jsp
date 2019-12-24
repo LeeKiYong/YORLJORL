@@ -29,7 +29,7 @@ $(function() {
 <body>
 <div class="mainTop_Header">
 	<div class="mainTop_logo">
-		<a href="main" >
+		<a href="http://localhost:8080/YORIJORI/main" >
 			<img src="/YORIJORI/images/요리조리로고.png" alt="메인로고" style="margin-top: 10px;" />
 		</a>
 	</div>
@@ -57,7 +57,7 @@ $(function() {
 				</li>
 				<li>|</li>
 				<li style="width:150;">
-					<a class="menuLink" href="###">쇼핑몰</a>
+					<a class="menuLink" href="martMain">쇼핑몰</a>
 					<ul class="mainTop_nav2" style="width: 150;">
 						<li>1</li>
 						<li>2</li>

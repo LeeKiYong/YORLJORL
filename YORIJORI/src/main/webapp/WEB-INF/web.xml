@@ -33,6 +33,9 @@
   			classpath:spring-recipe-controller.xml
   			classpath:spring-contest-beans.xml
   			classpath:spring-contest-controller.xml
+  			classpath:spring-mart-controller.xml
+  			classpath:spring-manager-controller.xml
+  			classpath:spring-manager-beans.xml
   		</param-value>
   	</init-param>
   	<!-- servlet 읽는 순서  -->

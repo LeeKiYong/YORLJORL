@@ -11,9 +11,6 @@
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
 
-<bean class="Controller.Contest.ContestController">
-</bean>
+<bean class = "Controller.Mart.MartController"/>
 
-<bean class="Controller.Contest.ParticipationController">
-</bean>
 </beans>

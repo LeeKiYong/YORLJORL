@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- mapper를 할 시 config >>> mapper로 바꿈 -->
+<!DOCTYPE mapper PUBLIC	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ContestMapper">
+	<cache/>
+	
+	<sql id="baseColumn">
+		contest_num, contest_name, contest_start, contest_end, contest_first, 
+		contest_second, contest_third
+	</sql>
+	
+	<resultMap type="contestDTO" id="baseContest">
+		<id column="contest_num" jdbcType="BIGINT" property="contestNum" />
+		<result column="contest_name" jdbcType="VARCHAR" property="contestName" />
+		<result column="contest_start" jdbcType="TIMESTAMP" property="contestStart" />
+		<result column="contest_end" jdbcType="TIMESTAMP" property="contestEnd" />
+		<result column="contest_first" jdbcType="VARCHAR" property="contestFirst" />
+		<result column="contest_second" jdbcType="VARCHAR" property="contestSecond" />
+		<result column="contest_third" jdbcType="VARCHAR" property="contestThird" />
+	</resultMap>
+	
+	<!-- insert -->
+	<insert id="contestInsert" parameterType="contestDTO"> 
+		insert into contest (<include refid="baseColumn" />)
+		values(contest_noseq.nextval, #{contestName}, #{contestStart}, #{contestEnd}, 'N', 'N', 'N')
+	</insert>
+</mapper>
