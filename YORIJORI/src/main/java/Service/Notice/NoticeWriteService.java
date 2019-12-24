@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import Command.Notice.NoticeCommand;
 import Model.DTO.NoticeDTO;
 import Repository.Notice.NoticeRepository;
 
@@ -23,22 +22,23 @@ public class NoticeWriteService {
 	String originFe = null;
 	String store = null;
 
-	public Integer noticeWrite(NoticeCommand noticeCommand, HttpServletRequest request) {
+	public Integer noticeWrite(String noticeClass, String noticeTitle, String noticeContent, MultipartFile[] noticeFn,
+			HttpServletRequest request) {
 		NoticeDTO notice = new NoticeDTO();
 		
-		notice.setNoticeTitle(noticeCommand.getNoticeTitle());
-		notice.setNoticeContent(noticeCommand.getNoticeContent());
-		notice.setNoticeClass(noticeCommand.getNoticeClass());
+		notice.setNoticeTitle(noticeTitle);
+		notice.setNoticeContent(noticeContent);
+		notice.setNoticeClass(noticeClass);
 		
 		String original = "";
 		
-		System.out.println(noticeCommand.getNoticeTitle());
-		System.out.println(noticeCommand.getNoticeContent());
-		System.out.println(noticeCommand.getNoticeClass());
-		System.out.println(noticeCommand.getNoticeFn());
+		System.out.println(noticeTitle);
+		System.out.println(noticeContent);
+		System.out.println(noticeClass);
+		System.out.println(noticeFn);
 		
 		//파일을 여러 개 넣었을 때 이름값을 저장하기 위한 부분
-		for(MultipartFile mf : noticeCommand.getNoticeFn()) {
+		for(MultipartFile mf : noticeFn ) {
 			//파일 이름을 가져옴
 			origin = mf.getOriginalFilename();
 			//확장자를 가져옴

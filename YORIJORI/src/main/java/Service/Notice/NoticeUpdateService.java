@@ -4,8 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-import Command.Notice.NoticeCommand;
 import Model.DTO.NoticeDTO;
 import Repository.Notice.NoticeRepository;
 
@@ -14,12 +14,12 @@ public class NoticeUpdateService {
 	@Autowired
 	NoticeRepository noticeRepository;
 
-	public Integer noticeUpdate(NoticeCommand noticeCommand, HttpServletRequest request) {
+	public Integer noticeUpdate(String noticeClass, String noticeTitle, String noticeContent, MultipartFile[] noticeFn, HttpServletRequest request) {
 		NoticeDTO notice = new NoticeDTO();
 		
-		notice.setNoticeTitle(noticeCommand.getNoticeTitle());
-		notice.setNoticeContent(noticeCommand.getNoticeContent());
-		notice.setNoticeClass(noticeCommand.getNoticeClass());
+		notice.setNoticeTitle(noticeTitle);
+		notice.setNoticeContent(noticeContent);
+		notice.setNoticeClass(noticeClass);
 		
 		Integer result = noticeRepository.noticeUpdate(notice);
 		return result;
