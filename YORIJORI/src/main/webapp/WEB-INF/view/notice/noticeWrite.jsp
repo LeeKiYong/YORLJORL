@@ -9,14 +9,14 @@
 <title>공지 글쓰기</title>
 </head>
 <body>
-<form:form action="noticeWritePro" method="post" enctype="multipart/form-data" command="noticeCommand">
+<form:form action="noticeWritePro" method="post" enctype="multipart/form-data" commandName="noticeCommand">
      <table cellpadding="0" cellspacing="0" > 
      	<tr>
 			<td style="font-size:12" height="16" > 
 				<div align="center">분류</div>
 			</td>
 			<td>
-				<select name = "notice1">
+				<select name = "noticeClass">
 					<option value = 공지>공지</option>
 					<option value = 이벤트>이벤트</option>
 				</select>
@@ -27,7 +27,7 @@
 				<div align="center">제목</div>
 			</td>
 			<td>
-				<input type=text name = "notice2" size="10" maxlength="10"/>
+				<input type=text name = "noticeTitle" size="10" maxlength="10"/>
 			</td>
 		</tr>
 		<tr>
@@ -35,7 +35,7 @@
 				<div align="center">내 용</div>
 			</td>
 			<td>
-				<textarea name = "notice3" cols="80" rows="50" ></textarea>
+				<textarea name = "noticeContent" cols="80" rows="50" ></textarea>
 			</td>
 		</tr>
 		<!-- 이클립스 오류로 인해 파일 업로드는 일단 없앱니다..공지사항에 파일 업로드가 필요한가요? 모르겟다
@@ -44,7 +44,7 @@
 				<div align="center">파일</div>
 			</td>
 			<td>
-				<input type="file" name="notice4" multiple = "multiple" />
+				<input type="file" name="noticeFn" multiple = "multiple" />
 			</td>
 		-->	
 	<tr>

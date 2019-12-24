@@ -10,8 +10,9 @@
 	<!-- ResultMap 설정. -->
 	<resultMap type = "Model.DTO.NoticeDTO" id="noticeSQL" >
 		<!-- PK컬럼 -->
-		<id column = "notice_num" jdbcType="BIGINT" property="noticeNum" />
+		<id column = "notice_num" jdbcType="INTEGER" property="noticeNum" />
 		<!-- 나머지 컬럼  -->
+		<result column = "manager_num" jdbcType="INTEGER" property="managerNum" />
 		<result column = "notice_title" jdbcType="VARCHAR" property="noticeTitle" />
 		<result column = "notice_content" jdbcType="VARCHAR" property="noticeContent"/>
 		<result column = "notice_class" jdbcType="VARCHAR" property="noticeClass"/>
@@ -22,7 +23,7 @@
 	<!-- 공지글 등록 insert -->
 	<insert id = "noticeInsert" parameterType="Model.DTO.NoticeDTO">
 		insert into notice( <include refid="basecolumn"/> )
-		values ( notice_noseq.nextval, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn, jdbcType=VARCHAR}, sysdate )
+		values ( notice_noseq.nextval, #{managerNum, jdbcType=INTEGER} #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn, jdbcType=VARCHAR}, sysdate )
 	</insert>
 	
 	<!-- 공지글 상세보기 셀렉트 -->
