@@ -17,7 +17,7 @@
 				<div align="center">분류</div>
 			</td>
 			<td>
-				<select name = noticeClass size=2 multiple>
+				<select name = noticeClass>
 					<option value = 1>공지</option>
 					<option value = 2>이벤트</option>
 				</select>
