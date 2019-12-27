@@ -16,35 +16,34 @@
 <div>
 	<jsp:include page="../main/mainTop.jsp" />
 </div>
-
+<c:if test="${!empty authInfo }">
 <div class="participation_form">
-<form:form action="participation/participationInsert" id="frm" name="frm" method="post" commandName="participationCommand" enctype="multipart/form-data">
-	<div =class="participation_insert">
-		<h3 align="center"></h3>
-		<hr size=5px align="center" color="black" />
+<form:form action="participationInsert" id="frm" name="frm" method="post" commandName="participationCommand" enctype="multipart/form-data">
+	<div class="participation_insert">
+		<h3 align="center">참가자 등록</h3>
 		<table width=900 align="center" border=1 cellpadding=15px;">
 			<tr>
+				
 				<td width="200">경연대회 회차</td>
 				<td width="400">
-					<select>
-						<option value="1">1회</option>
-						<option value="2">2회</option>
-						<option value="3">3회</option>
-						<option value="4">4회</option>
-						<option value="5">5회</option>
-					</select>
+					<form:select path="contestNum">
+						<option selected>--선택--</option>
+						<c:forEach var="num" items="${contestNum }">
+						<form:option value="${num }" label="${num }회" />
+						</c:forEach>
+					</form:select>
 				</td>
 			</tr>
 			<tr>
 				<td width="200">아이디</td>
 				<td width="400">
-					아이디들어감
+					${authInfo.id }
 				</td>
 			</tr>
 			<tr>
 				<td width="200">자기소개</td>
 				<td width="400">
-					<form:textarea path="participationIntro" cols="40" rows="20" />
+					<form:textarea path="participationIntro" style="width:550px; height:320; font-size:15px;"/>
 				</td>
 			</tr>
 			<tr>
@@ -65,5 +64,14 @@
 	</div>
 </form:form>
 </div>
+</c:if>
+<c:if test="${empty authInfo }">
+	<% 
+		out.println("<script>");
+		out.println("alert('먼저 로그인을 해주세요.');");
+		out.println("</script>");
+		response.sendRedirect("../login"); 
+	%>
+</c:if>
 </body>
 </html>

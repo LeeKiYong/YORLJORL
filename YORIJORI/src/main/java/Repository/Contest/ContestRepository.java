@@ -1,5 +1,7 @@
 package Repository.Contest;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,6 +22,11 @@ public class ContestRepository {
 	public Integer insertContest(ContestDTO dto) {
 		String statement = namespace + ".contestInsert";
 		return sqlSession.insert(statement, dto);
+	}
+	
+	public List<Long> selectContestNum() {
+		String statement = namespace + ".contestNumSelect";
+		return sqlSession.selectList(statement);
 	}
 	
 

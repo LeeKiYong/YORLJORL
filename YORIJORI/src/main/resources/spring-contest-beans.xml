@@ -25,6 +25,11 @@
 <bean id="contestCreateService" class="Service.Contest.ContestCreateService">
 </bean>
 
+<!-- 참가자 폼 이동 Service -->
+<bean id="participationFormService" class="Service.Contest.ParticipationFormService">
+</bean>
+
+<!-- 참가자 등록 Service -->
 <bean id="participationInsertService" class="Service.Contest.ParticipationInsertService">
 </bean>
 

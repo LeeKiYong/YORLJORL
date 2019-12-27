@@ -27,4 +27,10 @@
 		insert into contest (<include refid="baseColumn" />)
 		values(contest_noseq.nextval, #{contestName}, #{contestStart}, #{contestEnd}, 'N', 'N', 'N')
 	</insert>
+	
+	<!-- select -->
+	<select id="contestNumSelect" resultType="Long">
+		select contest_num from contest 
+		where contest_end &gt; sysdate
+	</select>
 </mapper>

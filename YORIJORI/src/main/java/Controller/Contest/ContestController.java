@@ -43,7 +43,7 @@ public class ContestController {
 			errors.rejectValue("contestName", "duplicate1");
 			return "contest/contestForm";
 		}
-		return "contest/contestMain";
+		return "redirect:/contest";
 	}
 	
 }

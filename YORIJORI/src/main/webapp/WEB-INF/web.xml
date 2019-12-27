@@ -33,6 +33,8 @@
   			classpath:spring-recipe-controller.xml
   			classpath:spring-contest-beans.xml
   			classpath:spring-contest-controller.xml
+  			classpath:spring-notice-controller.xml
+  			classpath:spring-notice-beans.xml
   			classpath:spring-mart-controller.xml
   			classpath:spring-manager-controller.xml
   			classpath:spring-manager-beans.xml

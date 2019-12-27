@@ -4,9 +4,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class ParticipationCommand {
 	
+	private Long contestNum;
 	private String participationIntro;
 	MultipartFile[] report;
 	
+	public Long getContestNum() {
+		return contestNum;
+	}
+	public void setContestNum(Long contestNum) {
+		this.contestNum = contestNum;
+	}
 	public String getParticipationIntro() {
 		return participationIntro;
 	}
