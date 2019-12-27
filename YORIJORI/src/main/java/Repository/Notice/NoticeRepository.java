@@ -24,7 +24,7 @@ public class NoticeRepository {
 		
 	}
 
-	public NoticeDTO noticeDetail(Long noticeNum) {
+	public NoticeDTO noticeDetail(Integer noticeNum) {
 		String statement = namespace + ".noticeDetail";
 		NoticeDTO noticeDTO = sqlSession.selectOne(statement, noticeNum);
 		return noticeDTO;

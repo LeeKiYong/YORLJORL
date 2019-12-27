@@ -12,8 +12,8 @@ public class noticeDeleteController {
 	@Autowired
 	NoticeDeleteService noticeDeleteService;
 	
-	@RequestMapping("/notice/noticeDelete")
-	public String noticeDelete(@RequestParam(value="noticeNum") int noticeNum) {
+	@RequestMapping("/noticeDelete")
+	public String noticeDelete(@RequestParam("num") int noticeNum) {
 		noticeDeleteService.notDelete(noticeNum);
 		return "redirect:/notice/noticeList";
 	}

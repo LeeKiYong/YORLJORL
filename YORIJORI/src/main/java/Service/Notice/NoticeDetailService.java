@@ -12,16 +12,10 @@ public class NoticeDetailService {
 	@Autowired
 	NoticeRepository noticeRepository;
 
-	public void noticeDetail(Model model, Long noticeNum) {
+	public void noticeDetail(Model model, Integer noticeNum) {
 		NoticeDTO noticeDTO = noticeRepository.noticeDetail(noticeNum);
-		/*
-		 * 이부분 놔둘지 말지
-		 * noticeDTO.setNoticeContent(noticeDTO.getNoticeContent().replace("\n", "<br />"));
-			if(noticeDTO.getNoticeFn() != null) {
-			String[] filename = noticeDTO.getNoticeFn().split("-");
-			model.addAttribute("filename", filename);
-			}
-		 */
+		//띄어쓰기가 적용되도록 하는 부분
+		noticeDTO.setNoticeContent(noticeDTO.getNoticeContent().replace("\n", "<br />"));
 		
 		model.addAttribute("notice", noticeDTO);
 		

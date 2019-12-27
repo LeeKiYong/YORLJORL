@@ -39,7 +39,7 @@ public class noticeController {
 	//어느 경우든 공지사항 리스트로 이동
 	@RequestMapping("/noticeList")
 	public String noticeList(@RequestParam(value="page", required = false) Integer page, Model model, NoticeListCommand noticeListCommand) {
-		noticeListService.getNoticeList(model, page, noticeListCommand);
+		noticeListService.getNoticeList(page, model, noticeListCommand);
 		return "notice/noticeList";
 	}
 

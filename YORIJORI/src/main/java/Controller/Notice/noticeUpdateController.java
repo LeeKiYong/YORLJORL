@@ -17,12 +17,12 @@ public class noticeUpdateController {
 	@Autowired
 	NoticeUpdateService noticeUpdateService;
 	
-	@RequestMapping("/notice/noticeUpdate")
-	public String noticeUpdate(@RequestParam(value="noticeNum") Integer noticeNum) {
-		return "redirect:/notice/noticeUpdate";
+	@RequestMapping("/noticeUpdate")
+	public String noticeUpdate(@RequestParam("num") Integer noticeNum) {
+		return "redirect:/noticeUpdate";
 	}
 	
-	@RequestMapping(value="/notice/noticeUpdatePro", method = RequestMethod.POST)
+	@RequestMapping(value="/noticeUpdatePro", method = RequestMethod.POST)
 	public String noticeUp(NoticeCommand noticeCommand, HttpServletRequest request) {
 		noticeUpdateService.noticeUpdate(noticeCommand, request);
 		return "notice/noticeDetail";

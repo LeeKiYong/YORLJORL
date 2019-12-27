@@ -23,15 +23,13 @@
 	<!-- 공지글 등록 insert -->
 	<insert id = "noticeInsert" parameterType="Model.DTO.NoticeDTO">
 		insert into notice( <include refid="basecolumn"/> )
-		values ( notice_noseq.nextval, #{managerNum}, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn, jdbcType=VARCHAR}, sysdate )
+		values ( notice_noseq.nextval, #{managerNum, jdbcType=INTEGER}, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn, jdbcType=VARCHAR}, sysdate )
 	</insert>
 	
 	<!-- 공지글 상세보기 셀렉트 -->
-	<select resultMap = "noticeSQL" id = "noticeDetail" parameterType = "string">
+	<select resultMap = "noticeSQL" id = "noticeDetail" parameterType="Model.DTO.NoticeDTO" >
 		select <include refid="basecolumn" /> from notice
-		<where>
-			notice_num = #{noticeNum}
-		</where>
+		where notice_num = #{noticeNum}
 	</select>
 	
 	<!-- 공지글 리스트 셀렉트 -->
@@ -57,7 +55,7 @@
 	
 	<!-- 공지글 삭제 delete -->
 	<delete id="noticeDelete" >
-		delete from notice where noticeNum = #{noticeNum}
+		delete (#{noticeNum}, #{managerNum}, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn}, #{noticeDate}) from notice where noticeNum = #{noticeNum}
 	</delete>
 	
 </mapper>
