@@ -57,3 +57,13 @@ body {
 	color: white;
 	background-color: #4d4d4d;
 }
+
+.mainTop_nav2 {
+	width: 150;
+	display: none;
+	text-decoration:none;
+}
+
+.mainTop_nav2 li {
+	display: inline-block;
+}	

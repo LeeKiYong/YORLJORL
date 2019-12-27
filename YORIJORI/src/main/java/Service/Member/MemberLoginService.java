@@ -46,7 +46,7 @@ public class MemberLoginService {
 				//입력한 command의 비밀번호와 불러온 dto의 비밀번호가 같을 때
 				//로그인 세션값 저장
 				authInfo = 
-						new AuthInfo(dto.getMemId(), dto.getMemEmail(), dto.getMemName(), dto.getMemPw());
+						new AuthInfo(dto.getMemNum(), dto.getMemId(), dto.getMemEmail(), dto.getMemName(), dto.getMemPw());
 				//세션 attribute
 				session.setAttribute("authInfo", authInfo);
 				//쿠키저장.

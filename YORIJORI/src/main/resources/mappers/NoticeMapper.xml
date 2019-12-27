@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "NoticeMapper">
+
+<cache />
+	<sql id="basecolumn">
+		notice_num, manager_num, notice_title, notice_content, notice_class, notice_fn, notice_date
+	</sql>
+	<!-- ResultMap 설정. -->
+	<resultMap type = "Model.DTO.NoticeDTO" id="noticeSQL" >
+		<!-- PK컬럼 -->
+		<id column = "notice_num" jdbcType="INTEGER" property="noticeNum" />
+		<!-- 나머지 컬럼  -->
+		<result column = "manager_num" jdbcType="INTEGER" property="managerNum" />
+		<result column = "notice_title" jdbcType="VARCHAR" property="noticeTitle" />
+		<result column = "notice_content" jdbcType="VARCHAR" property="noticeContent"/>
+		<result column = "notice_class" jdbcType="VARCHAR" property="noticeClass"/>
+		<result column = "notice_fn" jdbcType="VARCHAR" property="noticeFn"/>
+		<result column = "notice_date" jdbcType="TIMESTAMP" property="noticeDate"/>
+	</resultMap>
+	
+	<!-- 공지글 등록 insert -->
+	<insert id = "noticeInsert" parameterType="Model.DTO.NoticeDTO">
+		insert into notice( <include refid="basecolumn"/> )
+		values ( notice_noseq.nextval, #{managerNum, jdbcType=INTEGER}, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn, jdbcType=VARCHAR}, sysdate )
+	</insert>
+	
+	<!-- 공지글 상세보기 셀렉트 -->
+	<select resultMap = "noticeSQL" id = "noticeDetail" parameterType="Model.DTO.NoticeDTO" >
+		select <include refid="basecolumn" /> from notice
+		where notice_num = #{noticeNum}
+	</select>
+	
+	<!-- 공지글 리스트 셀렉트 -->
+	<select resultMap="noticeSQL" id = "noticeList" parameterType = "string">
+		select <include refid = "basecolumn" /> from notice
+	</select>
+	
+	<!-- 페이징을 위한 공지글 카운트 -->
+	<select id = "noticeCount" resultType = "int" >
+		select count(*) from notice
+	</select>
+	
+	<!-- 공지글 수정 update -->
+	<update id="noticeUpdate">
+		update notice
+		<set>
+			<if test = "noticeTitle != null and noticeTitle != ''">noticeTitle = #{noticeTitle},</if>
+			<if test = "noticeContent != null and noticeContent != ''">noticeContent = #{noticeContent},</if>
+			<if test = "noticeClass != null and noticeClass != ''">noticeClass = #{noticeClass} </if>
+		</set>
+		where noticeNum = #{noticeNum}
+	</update>
+	
+	<!-- 공지글 삭제 delete -->
+	<delete id="noticeDelete" >
+		delete (#{noticeNum}, #{managerNum}, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn}, #{noticeDate}) from notice where noticeNum = #{noticeNum}
+	</delete>
+	
+</mapper>
