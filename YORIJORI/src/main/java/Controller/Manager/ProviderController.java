@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import Command.manager.ProRegistCommand;
+import Service.Manager.ProDetailService;
 import Service.Manager.ProListService;
 import Service.Manager.ProRegistService;
 
@@ -15,6 +17,9 @@ public class ProviderController {
 	
 	@Autowired
 	ProRegistService proRegistService;
+	
+	@Autowired
+	ProDetailService proDetailService;
 	
 	@Autowired
 	ProListService proListService;
@@ -37,6 +42,12 @@ public class ProviderController {
 		proListService.list(model);
 		return "manager/providerList";
 	}
-		
+	//공급자 자세히보기
+	@RequestMapping("/providerDetail/{providerNum}")
+	public String providerDetail(@PathVariable("providerNum") Long providerNum , Model model) {
+		System.out.println("providerNum  ::  " + providerNum);
+		proDetailService.detail(providerNum,model);
+		return "manager/providerDetail";
+	}
 	
 }

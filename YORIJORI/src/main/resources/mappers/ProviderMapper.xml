@@ -37,4 +37,8 @@
 	<select id="providerSelect" parameterType="providerDTO" resultMap="provider">
 		select <include refid="providerColumn" /> from provider 
 	</select>
+	<select id="providerSelectOne" parameterType="providerDTO" resultMap="provider">
+		select <include refid="providerColumn" /> from provider 
+		where provider_num = #{providerNum}
+	</select>
 </mapper>

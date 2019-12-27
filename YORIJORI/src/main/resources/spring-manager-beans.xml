@@ -23,5 +23,8 @@
 <!-- 공급자목록서비스 -->
 <bean id="proListService" class="Service.Manager.ProListService">
 </bean>
+<!-- 공급자자세히보기서비스 -->
+<bean id="proDetailService" class="Service.Manager.ProDetailService">
+</bean>
 
 </beans>
