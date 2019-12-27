@@ -37,4 +37,10 @@ public class ProviderRepository {
 		return list;
 	}
 
+	public ProviderDTO providerSelectOne(ProviderDTO dto) {
+		String statement = namespace + ".providerSelectOne";//mapper에 있는 selectOne을 찾아서 실행
+		
+		return sqlSession.selectOne(statement,dto);
+	}
+
 }
