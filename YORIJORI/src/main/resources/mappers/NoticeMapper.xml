@@ -55,7 +55,7 @@
 	
 	<!-- 공지글 삭제 delete -->
 	<delete id="noticeDelete" >
-		delete (#{noticeNum}, #{managerNum}, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn}, #{noticeDate}) from notice where noticeNum = #{noticeNum}
+		delete (#{noticeNum}, #{managerNum, jdbcType=INTEGER}, #{noticeTitle}, #{noticeContent}, #{noticeClass}, #{noticeFn, jdbcType=VARCHAR}, #{noticeDate}) from notice where noticeNum = #{noticeNum}
 	</delete>
 	
 </mapper>

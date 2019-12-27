@@ -13,7 +13,7 @@ public class noticeDeleteController {
 	NoticeDeleteService noticeDeleteService;
 	
 	@RequestMapping("/noticeDelete")
-	public String noticeDelete(@RequestParam("num") int noticeNum) {
+	public String noticeDelete(@RequestParam("num") Integer noticeNum) {
 		noticeDeleteService.notDelete(noticeNum);
 		return "redirect:/notice/noticeList";
 	}
