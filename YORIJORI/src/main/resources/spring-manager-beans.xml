@@ -17,6 +17,9 @@
 <!-- 공급자등록서비스 -->
 <bean id="proRegistService" class="Service.Manager.ProRegistService">
 </bean>
+<!-- 관리자 로그인 -->
+<bean id = "managerLoginService" class = "Service.Manager.ManagerLoginService" />
+<bean id = "managerRepository" class = "Repository.Manager.ManagerRepository" />
 <!-- 공급자등록서비스 -->
 <bean id="providerRepository" class="Repository.Manager.ProviderRepository">
 </bean>

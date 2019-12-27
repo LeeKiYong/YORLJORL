@@ -14,6 +14,7 @@
 	 <typeAliases>
 	 	<typeAlias type="Model.DTO.MemberDTO" alias="memDTO" />
 	 	<typeAlias type="Model.DTO.ProviderDTO" alias="providerDTO" />
+	 	<typeAlias type="Model.DTO.ManagerDTO" alias="manDTO"/>
 	 </typeAliases>
 	
 </configuration>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import Command.Login.LoginCommand;
+import Command.manager.ManagerLoginCommand;
 import Service.Member.MemberLoginService;
 import Validator.LoginCommandValidator;
 
@@ -29,7 +30,7 @@ public class MemberLoginController {
 	
 	//POST방식 >>> submit 했을 시
 	@RequestMapping(method=RequestMethod.POST)
-	public String login(LoginCommand loginCommand, Errors errors, HttpSession session, 
+	public String login(ManagerLoginCommand managerLoginCommand, LoginCommand loginCommand, Errors errors, HttpSession session, 
 			HttpServletResponse response) {
 		
 		//1. 유효성검사 클래스(Validator) 호출

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<!-- taglib모음 include -->
+<%@ include file="../publicFile/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,11 +17,15 @@
 <div>
 <div style="border: 2px solid black; width:70%; height:40%; margin: 5px;">
 집가고싶따<br />
+<c:if test="${!empty manauthInfo }">
 <div style = "botton: 70%">
 	<a href="recipeRegister">레시피등록</a>
 </div>
+</c:if>
 </div>
-
 </div>
+	<div>
+		<jsp:include page="../main/mainFooter.jsp" />
+	</div>
 </body>
 </html>
