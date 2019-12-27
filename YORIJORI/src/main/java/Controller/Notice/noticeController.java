@@ -32,7 +32,7 @@ public class noticeController {
 	@RequestMapping(value="/noticeWritePro", method = RequestMethod.POST)
 	public String write(NoticeCommand noticeCommand, HttpServletRequest request) {
 		noticeWriteService.noticeWrite(noticeCommand, request );
-		return "redirect:/noticeList";
+		return "notice/noticeList";
 		
 	}
 	

@@ -1,9 +1,10 @@
 package Command.Notice;
 
 public class NoticeCommand {
-	String noticeClass;
-	String noticeTitle;
-	String noticeContent;
+	
+	private String noticeClass;
+	private String noticeTitle;
+	private String noticeContent;
 	
 	public String getNoticeClass() {
 		return noticeClass;

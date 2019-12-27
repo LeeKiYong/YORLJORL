@@ -9,6 +9,7 @@
 <title>공지 글쓰기</title>
 </head>
 <body>
+
 <form:form action="noticeWritePro" name="noticefrm" id = "noticefrm" method="post" commandName="noticeCommand">
      <table cellpadding="0" cellspacing="0" > 
      	<tr>
@@ -27,7 +28,7 @@
 				<div align="center">제목</div>
 			</td>
 			<td>
-				<input type=text name = "noticeTitle" size="10" maxlength="10"/>
+				<input type="text" name = "noticeTitle" size="10" maxlength="10"/>
 			</td>
 		</tr>
 		<tr>
