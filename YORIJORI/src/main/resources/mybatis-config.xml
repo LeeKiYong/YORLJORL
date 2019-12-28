@@ -12,9 +12,11 @@
 		type="사용 할 형에대한 경로" alias="지정할 별칭"
 	 -->
 	 <typeAliases>
-	 	<typeAlias type="Model.DTO.MemberDTO" alias="memDTO" />
-	 	<typeAlias type="Model.DTO.ProviderDTO" alias="providerDTO" />
 	 	<typeAlias type="Model.DTO.ManagerDTO" alias="manDTO"/>
+	 	<typeAlias type="Model.DTO.MemberDTO" alias="memDTO"/>
+	 	<typeAlias type="Model.DTO.ProviderDTO" alias="providerDTO"/>
+	 	<typeAlias type="Model.DTO.ContestDTO" alias="contestDTO"/> 
+	 	<typeAlias type="Model.DTO.ParticipationDTO" alias="parDTO"/>
 	 </typeAliases>
 	
 </configuration>

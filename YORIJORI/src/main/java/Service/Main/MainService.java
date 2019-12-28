@@ -24,7 +24,7 @@ public class MainService {
 		dto = memberRepository.userCheck(dto);
 		
 		//세션변수 선언 후 세션생성
-		AuthInfo authInfo = new AuthInfo(dto.getMemId(), dto.getMemEmail(), dto.getMemName(), dto.getMemPw());
+		AuthInfo authInfo = new AuthInfo(dto.getMemNum(), dto.getMemId(), dto.getMemEmail(), dto.getMemName(), dto.getMemPw());
 		session.setAttribute("authInfo", authInfo);
 	}
 }

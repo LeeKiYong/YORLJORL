@@ -7,8 +7,7 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans 
 			http://www.springframework.org/schema/beans/spring-beans.xsd 
 			http://www.springframework.org/schema/context 
-			http://www.springframework.org/schema/context/spring-context.xsd"
->
+			http://www.springframework.org/schema/context/spring-context.xsd">
 
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
@@ -21,7 +20,14 @@
 <bean id = "managerLoginService" class = "Service.Manager.ManagerLoginService" />
 <bean id = "managerRepository" class = "Repository.Manager.ManagerRepository" />
 <!-- 공급자등록서비스 -->
+<!-- 공급자등록repository -->
 <bean id="providerRepository" class="Repository.Manager.ProviderRepository">
+</bean>
+<!-- 공급자목록서비스 -->
+<bean id="proListService" class="Service.Manager.ProListService">
+</bean>
+<!-- 공급자자세히보기서비스 -->
+<bean id="proDetailService" class="Service.Manager.ProDetailService">
 </bean>
 
 </beans>
