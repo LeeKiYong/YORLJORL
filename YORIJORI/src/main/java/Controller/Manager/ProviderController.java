@@ -49,5 +49,9 @@ public class ProviderController {
 		proDetailService.detail(providerNum,model);
 		return "manager/providerDetail";
 	}
-	
+	//공급자 수정하기
+	//@RequestMapping("/providerModification")
+	//public String providerModification(ProRegistCommand proRegistCommand) {
+	//	return 
+	//}
 }
