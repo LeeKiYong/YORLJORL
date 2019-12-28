@@ -7,6 +7,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import Command.manager.ManagerLoginCommand;
 import Command.manager.ProRegistCommand;
 import Service.Manager.ProDetailService;
 import Service.Manager.ProListService;
@@ -25,7 +26,7 @@ public class ProviderController {
 	ProListService proListService;
 	//공급자 등록 페이지 이동
 	@RequestMapping("/providerRegistration")
-	public String providerRegistration(ProRegistCommand proRegistCommand) {
+	public String providerRegistration(ProRegistCommand proRegistCommand, ManagerLoginCommand managerLoginCommand) {
 		return "manager/providerRegistration";
 	}
 	//공급자 등록 action(Service)이동
@@ -37,7 +38,7 @@ public class ProviderController {
 	}
 	//공급자 목록 페이지 이동
 	@RequestMapping("/providerList")
-	public String providerList(Model model) {
+	public String providerList(Model model, ManagerLoginCommand managerLoginCommand) {
 		//Service 실행.
 		proListService.list(model);
 		return "manager/providerList";

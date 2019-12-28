@@ -15,8 +15,10 @@
 <div>
 	<jsp:include page="../main/mainTop.jsp" />
 </div>
+<c:if test="${!empty manauthInfo }">
 <a href="providerRegistration">공급자등록</a>
-<<a href="providerList">공급자목록</a>
+<a href="providerList">공급자목록</a>
+</c:if>
 상품목록들~.~
 </body>
 </html>

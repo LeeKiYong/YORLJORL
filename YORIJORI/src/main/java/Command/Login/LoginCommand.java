@@ -2,7 +2,6 @@ package Command.Login;
 
 //로그인 커맨드
 public class LoginCommand {
-	
 	private String id1;
 	private Boolean idStore;
 	private Boolean autoLogin;
