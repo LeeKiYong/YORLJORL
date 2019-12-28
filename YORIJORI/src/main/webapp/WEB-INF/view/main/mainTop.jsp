@@ -29,7 +29,7 @@ $(function() {
 <body>
 <div class="mainTop_Header">
 	<div class="mainTop_logo">
-		<a href="http://localhost:8080/YORIJORI/main" >
+		<a href="main">
 			<img src="/YORIJORI/images/요리조리로고.png" alt="메인로고" style="margin-top: 10px;" />
 		</a>
 	</div>

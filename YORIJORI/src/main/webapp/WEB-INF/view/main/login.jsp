@@ -52,7 +52,7 @@
 		<label><strong><spring:message code="password"/></strong></label>
 		<form:password path="pw" class="w3-input w3-border w3-round-large"/>
 		<div class="errors_message"><form:errors path="pw" /></div>
-	</div>	
+	</div>
 	<div class="login_option" style="text-align:center;">
 		<a href="register/agree">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="##" class="" >아이디</a>&middot;
@@ -62,7 +62,7 @@
     </div>
     <div class="login_action">
     	<input class="w3-button w3-black w3-round-xlarge" type="submit" value="로그인" 
-    	style="width: 300px; text-align: center;" id="btn" /> 
+    	style="width: 300px; text-align: center;" id="btn" />
     </div>
 </div>
 </form:form>

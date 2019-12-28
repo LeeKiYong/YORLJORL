@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import Command.Login.LoginCommand;
+import Command.manager.ManagerLoginCommand;
 import Service.Main.MainService;
 
 @Controller
@@ -20,7 +21,7 @@ public class MainController {
 
 	//메인페이지 이동
 	@RequestMapping("/main")
-	public String form() {
+	public String form(ManagerLoginCommand managerLoginCommand) {
 		return "main/main";
 	}
 	
@@ -29,7 +30,8 @@ public class MainController {
 	//@CookieValue(value="idStore", required = false) Boolean idStore
 	// >> 쿠키의 값 넣기 >> 있으면 체크가 되어있고 없으면 false(체크해제)
 	@RequestMapping(method=RequestMethod.GET, value="/loginForm")
-	public String loginForm(LoginCommand loginCommand, 
+	public String loginForm(ManagerLoginCommand managerLoginCommand,
+			LoginCommand loginCommand, 
 			@CookieValue(value="idStore", required=false) Cookie idStore, 
 			@CookieValue(value="autoLogin", required=false) Cookie autoLogin, HttpSession session) {
 		

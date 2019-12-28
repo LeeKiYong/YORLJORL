@@ -84,7 +84,6 @@ $(function () {
 <div>
 	<jsp:include page="mainTop.jsp" />
 </div>
-
 <!-- 메인 본문 -->
 <div class="div_container">
 	<!-- 메인 왼쪽 -->
@@ -140,7 +139,7 @@ $(function () {
     	<!-- 로그인 div -->
     	<div class="login_area" style="margin-top: 5px; border: 2px solid black;">
 	    	<!-- 로그인되지 않았을 때 -->
-	    	<c:if test="${empty authInfo }">
+	    	<c:if test="${empty authInfo && empty manauthInfo }">
 	    	<div class="main_login" style="margin:5px;">
 	    		<p>로그인 버튼을 눌러주세요.</p>
 				<a href="loginForm">
@@ -154,9 +153,14 @@ $(function () {
 	    	</div>
 	    	</c:if>
 	    	<!-- 로그인 됬을 때 -->
-	    	<c:if test="${!empty authInfo }">
+	    	<c:if test="${!empty authInfo || !empty manauthInfo }">
 	    	<div class="main_loginSuccess">
+	    		<c:if test="${!empty authInfo }">
 	    		<strong>${authInfo.name } 님</strong>
+	    		</c:if>
+	       		<c:if test="${!empty manauthInfo }">
+	    		<strong>${manauthInfo.manNameA } 님</strong>
+	    		</c:if>
 	    		<div style="text-align:right;">
 	    			<button class="w3-button w3-black w3-round-xlarge" 
 	    			style="width:90px" onclick="location.href='logout'">로그아웃</button>
