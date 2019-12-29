@@ -9,28 +9,28 @@
 <title>Insert title here</title>
 <!-- ------------------------------------------- -->
 <style type="text/css">
-     body{ 
-         text-align: center; 
+     .manbody{ 
+         text-align: center;
          display: block; 
          margin: 0 auto; 
          font-size: 16px; 
          color: #999; 
      } 
-     h1{ 
+     .manTitle{ 
          font-family: 'Oswald', sans-serif; 
          font-size: 30px; 
          color: #216182; 
      } 
-     label { 
+     #manlogin { 
          display: block; 
          margin-top: 20px; 
          letter-spacing: 2px; 
      } 
-     form { 
+     #manForm { 
          margin: 0 auto; 
          width: 459px; 
      } 
-     input, textarea { 
+     #mid, #mpw { 
          width: 439px; 
          height: 27px; 
          background-color: #efefef; 
@@ -41,15 +41,11 @@
          font-size: 0.9em; 
          color: #3a3a3a; 
      } 
-         input:focus, textarea:focus{ 
+       #mid, #mpw:focus{ 
              border: 1px solid #97d6eb; 
          } 
      
-     textarea{ 
-         height: 60px; 
-         background-color: #efefef; 
-     } 
-     #submit{ 
+     #manSubmit{ 
          width: 127px; 
          height: 48px; 
          text-align: center; 
@@ -57,19 +53,19 @@
          margin-top: 20px; 
          cursor: pointer; 
      } 
-     #submit:hover{ 
+     #manSubmit:hover{ 
          color: #fff; 
          background-color: #216282; 
          opacity: 0.9; 
      } 
-     #cancel { 
+     #manCancel { 
          width: 127px; height: 48px; 
          text-align: center; 
          border: none; 
          margin-top: 20px; 
          cursor: pointer; 
      } 
-     #cancel:hover{ 
+     #manCancel:hover{ 
          color: #fff; 
          background-color: #216282; 
          opacity: 0.9; 
@@ -165,20 +161,21 @@
 	</c:if>
 	
      <!-- 팝업 될 레이어 -->
+    <div class = "manbody">
      <div class="modal">
          <div class="modal-content">
              <span class="close-button">&times;</span>
-             <h1 class="title" style="color: white;">로그인</h1>
-              <form:form action="managerLogin" method="post" commandName="managerLoginCommand">
-               <label for="login" style="color: white;">Login</label>
+             <h1 class="manTitle" style="color: white;">로그인</h1>
+              <form:form path = "manForm" action="managerLogin" method="post" commandName="managerLoginCommand">
+               <label for="manlogin" style="color: white;">Login</label>
                <form:input path="mid" />
                <form:password path="mpw" />
-               <input type="submit" id ="submit" value="로그인" />
-               <input type="button" id="cancel" value="취소" />
+               <input type="submit" id ="manSubmit" value="로그인" />
+               <input type="button" id="manCancel" value="취소" />
              </form:form>
          </div>
      </div>
-
+	</div>
     <script type="text/javascript"> 
          var modal = document.querySelector(".modal"); 
          var trigger = document.querySelector(".trigger"); 

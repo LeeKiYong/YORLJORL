@@ -70,4 +70,7 @@ html, body {
 	margin-bottom: -50px;
 }
 
-
+.w3-button w3-black w3-round-xlarge{
+   margin: auto;
+   width: 50%;
+}
