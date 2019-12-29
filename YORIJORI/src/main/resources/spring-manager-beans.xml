@@ -29,5 +29,6 @@
 <!-- 공급자자세히보기서비스 -->
 <bean id="proDetailService" class="Service.Manager.ProDetailService">
 </bean>
-
+<!-- 공급자수정서비스 -->
+<bean id = "proModifyService" class = "Service.Manager.ProModifyService" />
 </beans>
