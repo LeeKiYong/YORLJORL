@@ -105,8 +105,10 @@ $(function () {
 			<c:forEach var="providerList" items="${list }"
 				varStatus="status">
 				<tr>
-					<td width="300"><a href="<c:url value='/providerDetail/${providerList.providerNum }'/>" style="text-decoration: none;">
+				<form:form action="providerDetail" commandName = "" >
+					<td width="300">
 				${providerList.providerNum } </a></td>
+				</form:form>
 					<td width="200">${providerList.providerName }</td>
 					<td width="300">${providerList.providerPh }</td>
 					<td width="300">${providerList.providerEmail }</td>
