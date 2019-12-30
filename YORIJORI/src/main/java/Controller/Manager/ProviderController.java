@@ -68,4 +68,6 @@ public class ProviderController {
 		proModifyService.modify(providerNum, model);
 		return "manager/providerModification";
 	}
+	//공급자 삭제하기
+	//@RequestMapping("/providerDelete")
 }
