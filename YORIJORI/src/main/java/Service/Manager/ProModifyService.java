@@ -14,7 +14,7 @@ public class ProModifyService {
 	ProviderRepository providerRepository;
 	
 	public void modify(Long providerNum, Model model) {
-		System.out.println("수정서비스");
+		System.out.println("수정하기페이지");
 		ProRegistCommand proRegistCommand = new ProRegistCommand();
 		proRegistCommand.setProviderNum(providerNum);
 		
@@ -22,6 +22,21 @@ public class ProModifyService {
 		providerDTO.setProviderNum(proRegistCommand.getProviderNum());
 		providerDTO = providerRepository.providerSelectOne(providerDTO);
 		
+		model.addAttribute("provider", providerDTO);
+	}
+	
+	public void modifyPro(Long providerNum, ProRegistCommand proRegistCommand, Model model) {
+		System.out.println("modifyPro");
+		proRegistCommand.setProviderNum(providerNum);
+		ProviderDTO providerDTO = new ProviderDTO();
+		providerDTO.setProviderNum(providerNum);
+		providerDTO.setProviderName(proRegistCommand.getProviderName());
+		providerDTO.setProviderPh(proRegistCommand.getProviderPh());
+		providerDTO.setProviderEmail(proRegistCommand.getProviderEmail());
+		providerDTO.setAccountsPayable(proRegistCommand.getAccountsPayable());
+		providerDTO.setProviderAccount(proRegistCommand.getProviderAccount());
+		
+		providerRepository.modifyProUpdate(providerDTO);
 		model.addAttribute("provider", providerDTO);
 	}
 

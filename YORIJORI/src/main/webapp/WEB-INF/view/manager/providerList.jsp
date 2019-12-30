@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
     <!-- taglib모음 include -->
 <%@ include file="../publicFile/taglib.jsp" %>
 <!DOCTYPE html>
@@ -105,10 +104,14 @@ $(function () {
 			<c:forEach var="providerList" items="${list }"
 				varStatus="status">
 				<tr>
-				<form:form action="providerDetail" commandName = "" >
 					<td width="300">
-				${providerList.providerNum } </a></td>
-				</form:form>
+ 				<a href="providerDetail?providerNum=${providerList.providerNum}">
+				${providerList.providerNum }</a>
+<%-- 				<form:form commandName = "proRegistCommand" action = "providerDetail">
+				
+				<form:input type="submit" path="providerNum" value = "${providerList.providerNum }" />
+				</form:form> --%>
+				</td>
 					<td width="200">${providerList.providerName }</td>
 					<td width="300">${providerList.providerPh }</td>
 					<td width="300">${providerList.providerEmail }</td>

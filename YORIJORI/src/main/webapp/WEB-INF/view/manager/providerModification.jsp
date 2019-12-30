@@ -112,7 +112,7 @@ $(function () {
 </div>
 
 <body>
-	<form:form action="providerModifyPro" id="frm" name="frm" method="post" commandName="proRegistCommand">
+	<form:form action="providerModifyPro?providerNum=${provider.providerNum}" id="frm" name="frm" method="post" commandName="proRegistCommand">
 		<h3 align="center">공급자 수정</h3>
 		<hr size=5px align="center" color="" />
 		<table width=900 align="center" border=1 cellpadding=15px;">
@@ -123,6 +123,7 @@ $(function () {
 			<tr>
 				<td width="200">공급자 이름</td>
 				<td width="400">${provider.providerName }</td>
+				<form:hidden path="providerName" value = "${provider.providerName }"/>
 			</tr>
 			<tr>
 				<td width="200">공급자 연락처</td>
@@ -142,6 +143,7 @@ $(function () {
 			<tr>
 				<td width="200">외상매입금</td>
 				<td width="400">${provider.accountsPayable }&nbsp;원</td>
+				<form:hidden path="accountsPayable" value = "${provider.accountsPayable }"/>
 			</tr>
 		</table>
 		<br />
