@@ -42,5 +42,21 @@ public class ProviderRepository {
 		
 		return sqlSession.selectOne(statement,dto);
 	}
+	
+	public Integer modifyProUpdate(ProviderDTO providerDTO) {
+		Integer result = null;
+		//Mapper에 있는 id 경로 
+		String statement = namespace + ".modifyProUpdate";
+		result = sqlSession.update(statement,providerDTO);
+		return result;
+	}
+
+	public Integer providerDelete(ProviderDTO providerDTO) {
+		Integer result = null;
+		//Mapper에 있는 id 경로
+		String statement = namespace + ".providerDelete";//mapper에 있는 delete를 찾아서 실행
+		result = sqlSession.delete(statement, providerDTO);
+		return result;
+	}
 
 }

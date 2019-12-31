@@ -143,7 +143,7 @@ $(function () {
 	    	<div class="main_login" style="margin:5px;">
 	    		<p>로그인 버튼을 눌러주세요.</p>
 				<a href="loginForm">
-					<button class="w3-button w3-black w3-round-xlarge" style="width:290px">로그인</button>
+					<button class="w3-button w3-black w3-round-xlarge" style="width:290px; ">로그인</button>
 				</a>
 				<div>
 					<a href="register/regist">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -152,10 +152,11 @@ $(function () {
 	    		</div>
 	    	</div>
 	    	</c:if>
-	    	<!-- 로그인 됬을 때 -->
+	    	<!-- 로그인 됐을 때 -->
 	    	<c:if test="${!empty authInfo || !empty manauthInfo }">
 	    	<div class="main_loginSuccess">
 	    		<c:if test="${!empty authInfo }">
+	    		<a href = "chefSignUp">쉐프신청</a> | 
 	    		<strong>${authInfo.name } 님</strong>
 	    		</c:if>
 	       		<c:if test="${!empty manauthInfo }">
