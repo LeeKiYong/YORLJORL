@@ -41,4 +41,8 @@
 		select <include refid="providerColumn" /> from provider 
 		where provider_num = #{providerNum}
 	</select>
+	<update id="modifyProUpdate" parameterType="providerDTO">
+		update provider set PROVIDER_PH = #{providerPh}, PROVIDER_EMAIL = #{providerEmail}, PROVIDER_ACCOUNT = #{providerAccount}
+		where provider_num = #{providerNum}
+	</update>
 </mapper>

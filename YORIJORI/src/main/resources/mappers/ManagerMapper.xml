@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- mapper를 할 시 config >>> mapper로 바꿈 -->
+<!DOCTYPE mapper PUBLIC	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 자신이 지정. -->
+<mapper namespace="ManagerMapper">
+	<cache />
+<resultMap type="manDTO" id="managerLogin">
+	<!-- PK 관리자번호 -->
+	<id column = "MANAGER_NUM" jdbcType = "INTEGER" property = "managerNum" />
+	<!-- 관리자이름 -->
+	<result column = "MANAGER_NAME" jdbcType = "VARCHAR" property = "managerName" />
+	<!-- 관리자아이디 -->
+	<result column = "MANAGER_ID" jdbcType = "VARCHAR" property = "managerId" />
+	<!-- 관리자비밀번호 -->
+	<result column = "MANAGER_PASSWORD" jdbcType = "VARCHAR" property = "managerPassword" />
+	<!-- 관리자 2차비밀번호 -->
+	<result column = "MANAGER_SECOND_PASSWORD" jdbcType = "VARCHAR" property = "managerSecondPassword" />
+</resultMap>
+	<select id = "manCheck" parameterType="manDTO" resultMap="managerLogin">
+		select MANAGER_NUM, MANAGER_NAME, MANAGER_ID, MANAGER_PASSWORD, MANAGER_SECOND_PASSWORD
+		from manager 
+		<trim prefix = "where" prefixOverrides="and | or">
+			<if test = "managerPassword != null">
+				MANAGER_PASSWORD=#{managerPassword}
+			</if>
+			and MANAGER_ID=#{managerId}
+		</trim>
+	</select>
+</mapper>
