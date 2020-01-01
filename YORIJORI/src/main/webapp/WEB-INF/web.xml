@@ -38,6 +38,8 @@
   			classpath:spring-mart-controller.xml
   			classpath:spring-manager-controller.xml
   			classpath:spring-manager-beans.xml
+  			classpath:spring-cooking-controller.xml
+  			classpath:spring-cooking-beans.xml
   		</param-value>
   	</init-param>
   	<!-- servlet 읽는 순서  -->
