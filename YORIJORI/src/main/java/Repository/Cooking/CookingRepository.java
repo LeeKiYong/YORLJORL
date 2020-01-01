@@ -19,7 +19,7 @@ public class CookingRepository {
 		Integer result = sqlSession.insert(statement, plan);
 		return result;
 	}
-
+	//수업 상세보기
 	public ClassplanDTO classDetail(Integer classNum) {
 		String statement = namespace + ".planDetail";
 		ClassplanDTO plan = sqlSession.selectOne(statement, classNum);
