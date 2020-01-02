@@ -6,6 +6,7 @@ public class MemberCommand {
 	//				  service
 	//request.getParameter()  >> 쿼리스트링문 command 클래스 이용하여 임시저장
 	//view를 받아옴.
+	Long memNum;
 	String memId;
 	String memPw;
 	String memPwCon;
@@ -16,6 +17,14 @@ public class MemberCommand {
 	String memAddr;
 	
 	
+	public Long getMemNum() {
+		return memNum;
+	}
+
+	public void setMemNum(Long memNum) {
+		this.memNum = memNum;
+	}
+
 	public String getMemId() {
 		return memId;
 	}

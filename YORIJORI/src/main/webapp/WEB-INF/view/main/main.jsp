@@ -41,7 +41,6 @@ function boardTabSetting() {
         return false;
     });
 }
-
 function recipeTabSetting() {
 	//탭 컨텐츠 hide 후 현재 탭메뉴 페이지만 show
 	//$('.tabPage').hide();

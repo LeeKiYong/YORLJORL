@@ -124,7 +124,7 @@ $(function () {
 	<form:form action="providerRegistration/action" id="frm" name="frm" method="post" commandName="proRegistCommand">
 		<h3 align="center">공급자 등록</h3>
 		<hr size=5px align="center" color="" />
-		<table width=900 align="center" border=1 cellpadding=15px;">
+		<table width=900 align="center" border=1 cellpadding=15px;>
 			<tr>
 				<td width="200">사업자 번호</td>
 				<td width="400"><form:input path="providerNum" 
