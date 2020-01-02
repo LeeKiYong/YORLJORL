@@ -39,6 +39,11 @@
 	<jsp:include page="mainTop.jsp" />
 </div>
 <body>
+<!-- 메인 왼쪽 -->
+    <div class="div_left">
+    	<div>
+		<jsp:include page="../main/sideNav.jsp" />
+	</div></div>
 <form:form id="frm" name="frm" action="login" method="post" commandName="loginCommand">
 <div class="login_form">
 	<div class="login_insert" >

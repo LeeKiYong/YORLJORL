@@ -31,4 +31,6 @@
 </bean>
 <!-- 공급자수정서비스 -->
 <bean id = "proModifyService" class = "Service.Manager.ProModifyService" />
+<!-- 공급자삭제서비스 -->
+<bean id = "proDeleteService" class = "Service.Manager.ProDeleteService" />
 </beans>
