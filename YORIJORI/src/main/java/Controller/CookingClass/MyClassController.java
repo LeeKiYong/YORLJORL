@@ -38,18 +38,21 @@ public class MyClassController {
 		Calendar cal = Calendar.getInstance();
 		DateCommand calendarDate;
 		
+		//날짜 커맨드에서 생성한 칼렌다 객체값 가져와 리스트로 담음.
 		Map<String, Integer> todayInfo = dateCommand.todayInfo(dateCommand);
 		List<DateCommand> dateList = new ArrayList<DateCommand>();
 		
-		//시작일까지 아무것도 없는 데이터 넣음
+		//시작일까지 아무것도 없는 데이터를 넣어 공백칸 생성
 		for(int i=1; i<todayInfo.get("start"); i++) {
 			calendarDate = new DateCommand(null, null, null, null);
 			dateList.add(calendarDate);
 		}
 		
-		//날짜
+		//날짜 삽입
 		for (int i = todayInfo.get("startDay"); i <= todayInfo.get("endDay"); i++) {
-			calendarDate = new DateCommand(String.valueOf(dateCommand.getYear()), String.valueOf(dateCommand.getMonth()), String.valueOf(i), String.valueOf(dateCommand.getValue()));
+			calendarDate = new DateCommand(String.valueOf(dateCommand.getYear()), 
+							   String.valueOf(dateCommand.getMonth()), String.valueOf(i), 
+							   String.valueOf(dateCommand.getValue()));
 			dateList.add(calendarDate);
 		}
 		
