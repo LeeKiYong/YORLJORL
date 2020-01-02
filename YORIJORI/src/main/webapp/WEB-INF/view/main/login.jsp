@@ -54,7 +54,7 @@
 		<div class="errors_message"><form:errors path="pw" /></div>
 	</div>
 	<div class="login_option" style="text-align:center;">
-		<a href="register/agree">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="agree">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="##" class="" >아이디</a>&middot;
 		<a href="###" class="" >비밀번호 찾기</a>&nbsp;&nbsp;
 		<spring:message code="autoLogin"/>

@@ -9,70 +9,6 @@
 <meta charset="UTF-8">
 <title>공급자 목록</title>
 <script type="text/javascript">
-
-function boardTabSetting() {
-    // 탭 컨텐츠 hide 후 현재 탭메뉴 페이지만 show
-    //$('.tabPage').hide();
-    $($('.boardCurrent').find('a').attr('href')).show();
-
-    // BoardTab 메뉴 클릭 이벤트 생성
-    $('#board_tap').click(function (event) {
-        var tagName = event.target.tagName; // 현재 선택된 태그네임
-        // A태그일 경우 상위 Li태그 선택, Li태그일 경우 그대로 태그 객체
-        var selectedLiTag = (tagName.toString() == 'A') ? $(event.target).parent('li') : $(event.target);
-        var currentLiTag = $('li[class~=boardCurrent]'); // 현재 current 클래스를 가진 탭
-        var isCurrent = false; 
-         
-        // 현재 클릭된 탭이 boardCurrent를 가졌는지 확인
-        isCurrent = $(selectedLiTag).hasClass('boardCurrent');
-         
-        // boardCurrent를 가지지 않았을 경우만 실행
-        if (!isCurrent) {
-            $($(currentLiTag).find('a').attr('href')).hide();
-            $(currentLiTag).removeClass('boardCurrent');
-
-            $(selectedLiTag).addClass('boardCurrent');
-            $($(selectedLiTag).find('a').attr('href')).show();
-        }
-
-        return false;
-    });
-}
-
-function recipeTabSetting() {
-	//탭 컨텐츠 hide 후 현재 탭메뉴 페이지만 show
-	//$('.tabPage').hide();
-	$($('.recipeCurrent').find('a').attr('href')).show();
-	
-	// RecipeTab 메뉴 클릭 이벤트 생성
-    $('#recipe_tap').click(function (event) {
-        var tagName = event.target.tagName; // 현재 선택된 태그네임
-        // A태그일 경우 상위 Li태그 선택, Li태그일 경우 그대로 태그 객체
-        var selectedLiTag = (tagName.toString() == 'A') ? $(event.target).parent('li') : $(event.target);
-        var currentLiTag = $('li[class~=recipeCurrent]'); // 현재 current 클래스를 가진 탭
-        var isCurrent = false; 
-         
-        // 현재 클릭된 탭이 recipeCurrent를 가졌는지 확인
-        isCurrent = $(selectedLiTag).hasClass('recipeCurrent');
-         
-        // recipeCurrent를 가지지 않았을 경우만 실행
-        if (!isCurrent) {
-            $($(currentLiTag).find('a').attr('href')).hide();
-            $(currentLiTag).removeClass('recipeCurrent');
-
-            $(selectedLiTag).addClass('recipeCurrent');
-            $($(selectedLiTag).find('a').attr('href')).show();
-        }
-
-        return false;
-    });
-}
-
-$(function () {
-    // 탭 초기화 및 설정
-    boardTabSetting();
-    recipeTabSetting();
-});
 </script>
 </head>
 <!-- 상단 mainTop(메뉴바) include -->
@@ -91,7 +27,7 @@ $(function () {
 	</div>
 	<br />
 	
-	<table width = 1200 align="center" border=1 cellpadding=15px;">
+	<table width = 1200px align="center" border=1 cellpadding=15px>
 	
 		<tr>
 			<td width="300">사업자 번호</td>

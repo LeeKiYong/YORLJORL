@@ -1,5 +1,8 @@
 package Repository.Participation;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,4 +24,24 @@ public class ParticipationRepository {
 		String statement = namespace + ".participationInsert";
 		sqlSession.insert(statement, dto);
 	}
+	
+	//참가자 리스트 전체 select
+	public List<ParticipationDTO> selectAll() {
+		String statement = namespace + ".participationSelect";
+		return sqlSession.selectList(statement);
+	}
+	
+	//수정된 참가자 리스트 (app='Y') select
+	public List<ParticipationDTO> selectUpdateAll() {
+		String statement = namespace + ".upParticipationSelect";
+		return sqlSession.selectList(statement);
+	}
+
+	//참가자 승인
+	public Integer appUpdate(Map<String, Object> parNum) {
+		String statement = namespace + ".upParticipationApp";
+		return sqlSession.update(statement, parNum);
+	}
+	
+	
 }

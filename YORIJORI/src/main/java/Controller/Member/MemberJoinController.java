@@ -16,19 +16,19 @@ public class MemberJoinController {
 	MemberJoinService memberJoinService;
 	
 	//약관동의페이지 이동
-	@RequestMapping("/register/agree")
+	@RequestMapping("/agree")
 	public String agree() {
 		return "member/memberAgree";
 	}
 	
 	//회원가입 페이지 이동
-	@RequestMapping("/register/regist")
+	@RequestMapping("/regist")
 	public String memberForm(MemberCommand memberCommand) {
 		return "member/memberForm";
 	}
 	
 	//회원가입 action실행.
-	@RequestMapping("/register/memberJoinAction")
+	@RequestMapping("/memberJoinAction")
 	public String membetJoin(MemberCommand memberCommand, Errors errors) {
 		//유효성 검사. (에러메세지 출력) >>> Validator 사용
 		new MemberCommandValidator().validate(memberCommand, errors);
