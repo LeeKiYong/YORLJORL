@@ -160,8 +160,9 @@ $(function () {
 		<br />
 		<div id="btn"
 			style="text-align: center; vertical-align: middle; text-decoration: none;">
-			<input type="submit" value="공급자등록" style="width:75px; height:30px; align:center;"/> <input type="reset"
-				value="다시 입력" style="width:75px; height:30px; align:center;"/> <input type="button" value="등록취소" style="width:75px; height:30px; align:center;"/>
+			<input type="submit" value="공급자등록" style="width:75px; height:30px; align:center;"/> 
+			<input type="reset" value="다시 입력" style="width:75px; height:30px; align:center;"/>
+			<input type="button" onclick="history.back();" value="등록취소" style="width:75px; height:30px; align:center;"/>
 		</div>
 	</form:form>
 </body>

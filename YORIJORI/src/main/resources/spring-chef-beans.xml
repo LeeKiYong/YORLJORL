@@ -12,5 +12,10 @@
 
 <!-- @Autowired 사용 시. -->
 <context:annotation-config />
+<!-- 셰프 신청  command -->
 <bean id = "chefSignUpCommand" class = "Command.Chef.ChefSignUpCommand" />
+<!-- 셰프 신청 -->
+<bean id = "chefSignUpProService" class = "Service.Chef.ChefSignUpProService" />
+<!-- 셰프 신청 Repository  -->
+<bean id = "chefSignUpRepository" class = "Repository.Chef.ChefSignUpRepository" />
 </beans>

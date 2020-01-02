@@ -155,11 +155,12 @@ $(function () {
 	    	<c:if test="${!empty authInfo || !empty manauthInfo }">
 	    	<div class="main_loginSuccess">
 	    		<c:if test="${!empty authInfo }">
-	    		<a href = "chefSignUp">쉐프신청</a> | 
 	    		<strong>${authInfo.name } 님</strong>
+	    		<a href = "chefSignUp">쉐프신청</a> | 
 	    		</c:if>
 	       		<c:if test="${!empty manauthInfo }">
 	    		<strong>${manauthInfo.manNameA } 님</strong>
+				<a href = "chefSignUpList?managerNum=${manauthInfo.managerNum }">신청목록보기</a>	    		
 	    		</c:if>
 	    		<div style="text-align:right;">
 	    			<button class="w3-button w3-black w3-round-xlarge" 

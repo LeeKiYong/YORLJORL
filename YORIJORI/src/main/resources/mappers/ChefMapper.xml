@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- mapper를 할 시 config >>> mapper로 바꿈 -->
+<!DOCTYPE mapper PUBLIC	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace는 자신이 지정. -->
+<mapper namespace="ChefMapper">
+	<cache />
+<resultMap type="ChefSignUpDTO" id="chefSignUp">
+	<!-- 회원번호 -->
+	<result column = "MEM_NUM" jdbcType = "INTEGER" property = "memNum" />
+	<!-- 매니저번호 -->
+	<result column = "MANAGER_NUM" jdbcType = "INTEGER" property = "managerNum" />
+	<!-- 자격증 -->
+	<result column = "COOK_LICENSE" jdbcType = "VARCHAR" property = "license" />
+	<!-- 요리경력 -->
+	<result column = "COOK_CAREER" jdbcType = "VARCHAR" property = "career" />
+	<!-- 자기소개서 -->
+	<result column = "COOK_INTRO" jdbcType = "VARCHAR" property = "intro" />
+	</resultMap>
+	<insert id="chefSignUpInsert" parameterType="ChefSignUpDTO">
+		insert into ENTRADA_PAPERS (MEM_NUM, MANAGER_NUM, COOK_LICENSE, COOK_CAREER, COOK_INTRO) 
+		values (#{memNum}, null, #{license}, #{career}, #{intro})
+	</insert>
+	</mapper>
