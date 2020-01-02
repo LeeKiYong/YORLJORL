@@ -25,7 +25,7 @@
 	
 	<insert id = "planInsert" parameterType = "Model.DTO.ClassplanDTO" >
 		insert into classplan( <include refid="classplancolumn" />)
-		values (classplans_noseq.nextval, )
+		values (classplans_noseq.nextval, #{chefNum, jdbcType=INTEGER}, #{memNum, jdbcType=INTEGER}, #{chefName}, #{className}, #{classGoal}, #{classSub}, #{classCost}, #{classMate, jdbctype=VARCHAR}, #{classDate}, #{classPlace}, N )
 	</insert>
 	
 	<select resultMap = "planSQL" id = "planDetail" parameterType = "Model.DTO.ClassplanDTO" >

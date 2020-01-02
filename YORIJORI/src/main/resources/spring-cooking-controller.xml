@@ -12,5 +12,6 @@
 
 <bean class = "Controller.CookingClass.MyClassController" />
 <bean class = "Controller.CookingClass.ClassDetailController" />
+<bean class = "Controller.CookingClass.ClassPermitController" />
 
 </beans>

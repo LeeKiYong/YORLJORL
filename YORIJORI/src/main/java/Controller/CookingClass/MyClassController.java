@@ -22,14 +22,14 @@ public class MyClassController {
 	//수업 등록페이지로 이동
 	@RequestMapping("/MyClassReg")
 	public String ClassReg() {
-		return "member/ClassWrite";
+		return "manager/ClassWrite";
 	}
 	
 	//수업 등록페이지에서 등록 누르면.
 	@RequestMapping(value="/ClassWritePro", method=RequestMethod.POST)
 	public String ClassWrite(CookingCommand cookingCommand, HttpServletRequest request) {
 		cookingMyclassService.classWrite(cookingCommand, request);
-		return "";
+		return "manager/(매니저 메인페이지)";
 	}
 	
 	//나의 수업 페이지롤 이동
