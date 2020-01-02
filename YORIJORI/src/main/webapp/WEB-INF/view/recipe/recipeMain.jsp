@@ -14,6 +14,11 @@
 <div>
 	<jsp:include page="../main/mainTop.jsp" />
 </div>
+<!-- 메인 왼쪽 -->
+    <div class="div_left">
+    	<div>
+		<jsp:include page="../main/sideNav.jsp" />
+	</div></div>
 <div>
 <div style="border: 2px solid black; width:70%; height:40%; margin: 5px;">
 집가고싶따<br />

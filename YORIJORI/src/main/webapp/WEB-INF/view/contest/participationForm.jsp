@@ -16,6 +16,11 @@
 <div>
 	<jsp:include page="../main/mainTop.jsp" />
 </div>
+<!-- 메인 왼쪽 -->
+    <div class="div_left">
+    	<div>
+		<jsp:include page="../main/sideNav.jsp" />
+	</div></div>
 <c:if test="${!empty authInfo }">
 <div class="participation_form">
 <form:form action="participationInsert" id="frm" name="frm" method="post" commandName="participationCommand" enctype="multipart/form-data">
