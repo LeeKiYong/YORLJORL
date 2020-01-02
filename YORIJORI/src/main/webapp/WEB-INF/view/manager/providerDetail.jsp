@@ -15,77 +15,16 @@
 
 <script type="text/javascript">
 
-function boardTabSetting() {
-		// 탭 컨텐츠 hide 후 현재 탭메뉴 페이지만 show
-		//$('.tabPage').hide();
-		$($('.boardCurrent').find('a').attr('href')).show();
 
-		// BoardTab 메뉴 클릭 이벤트 생성
-		$('#board_tap').click(
-				function(event) {
-					var tagName = event.target.tagName; // 현재 선택된 태그네임
-					// A태그일 경우 상위 Li태그 선택, Li태그일 경우 그대로 태그 객체
-					var selectedLiTag = (tagName.toString() == 'A') ? $(
-							event.target).parent('li') : $(event.target);
-					var currentLiTag = $('li[class~=boardCurrent]'); // 현재 current 클래스를 가진 탭
-					var isCurrent = false;
-
-					// 현재 클릭된 탭이 boardCurrent를 가졌는지 확인
-					isCurrent = $(selectedLiTag).hasClass('boardCurrent');
-
-					// boardCurrent를 가지지 않았을 경우만 실행
-					if (!isCurrent) {
-						$($(currentLiTag).find('a').attr('href')).hide();
-						$(currentLiTag).removeClass('boardCurrent');
-
-						$(selectedLiTag).addClass('boardCurrent');
-						$($(selectedLiTag).find('a').attr('href')).show();
-					}
-
-					return false;
-				});
-	}
-
-	function recipeTabSetting() {
-		//탭 컨텐츠 hide 후 현재 탭메뉴 페이지만 show
-		//$('.tabPage').hide();
-		$($('.recipeCurrent').find('a').attr('href')).show();
-
-		// RecipeTab 메뉴 클릭 이벤트 생성
-		$('#recipe_tap').click(
-				function(event) {
-					var tagName = event.target.tagName; // 현재 선택된 태그네임
-					// A태그일 경우 상위 Li태그 선택, Li태그일 경우 그대로 태그 객체
-					var selectedLiTag = (tagName.toString() == 'A') ? $(
-							event.target).parent('li') : $(event.target);
-					var currentLiTag = $('li[class~=recipeCurrent]'); // 현재 current 클래스를 가진 탭
-					var isCurrent = false;
-
-					// 현재 클릭된 탭이 recipeCurrent를 가졌는지 확인
-					isCurrent = $(selectedLiTag).hasClass('recipeCurrent');
-
-					// recipeCurrent를 가지지 않았을 경우만 실행
-					if (!isCurrent) {
-						$($(currentLiTag).find('a').attr('href')).hide();
-						$(currentLiTag).removeClass('recipeCurrent');
-
-						$(selectedLiTag).addClass('recipeCurrent');
-						$($(selectedLiTag).find('a').attr('href')).show();
-					}
-
-					return false;
-				});
-	}
-
-	$(function() {
-		// 탭 초기화 및 설정
-		boardTabSetting();
-		recipeTabSetting();
-	});
-	
 	$(function(){
 		$("#providerModify").click(function() {
 			location.href="providerModification?providerNum=" + ${provider.providerNum};
+		});
+		$("#providerList").click(function() {
+			location.href="providerList";
+		});
+		$("#providerDelete").click(function() {
+			location.href="providerDelete?providerNum=" + ${provider.providerNum};
 		});
 	})
 </script>
@@ -132,10 +71,10 @@ function boardTabSetting() {
 		<br />
 		
 		<div id="btn"
-			style="text-align: center; vertical-align: middle; text-decoration: none;">
-			<button id = "providerModify" >수정</button>
-			<input type="button" value="공급자목록" onclick="location.href='../providerList'" /> 
-			<input type="button" name="providerDelete" id="providerDelete" value="삭제" />
+			style="text-align: center; vertical-align: middle; text-decoration: none; ">
+			<button id = "providerModify" style="width:75px; height:30px; align:center;" >수정</button>
+			<button id = "providerList"  style="width:85px; height:30px; align:center;">공급자목록</button>
+			<button id = "providerDelete"  style="width:85px; height:30px; align:center;">삭제</button>
 		</div>
 </body>
 <div>
