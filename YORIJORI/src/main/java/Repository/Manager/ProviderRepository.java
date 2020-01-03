@@ -18,8 +18,8 @@ public class ProviderRepository {
 	private SqlSession sqlSession;
 	
 	//MemberMapper.xml에 정해준 namespace사용  >>> 같아야함
-		//xxxMapper.xml에 쿼리문 작성.
-		private final String namespace = "ProviderMapper";
+	//xxxMapper.xml에 쿼리문 작성.
+	private final String namespace = "ProviderMapper";
 
 	public Integer providerInsert(ProviderDTO providerDTO) {
 		Integer result = null;

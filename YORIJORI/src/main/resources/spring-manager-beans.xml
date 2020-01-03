@@ -33,4 +33,11 @@
 <bean id = "proModifyService" class = "Service.Manager.ProModifyService" />
 <!-- 공급자삭제서비스 -->
 <bean id = "proDeleteService" class = "Service.Manager.ProDeleteService" />
+
+<!-- 계약서 Repository -->
+<bean id="contractRepository" class="Repository.Manager.ContractRepository"/>
+
+<!-- 계약서 등록 -->
+<bean id="contractInsertService" class="Service.Manager.ContractInsertService" />
+
 </beans>

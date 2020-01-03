@@ -40,6 +40,8 @@
   			classpath:spring-manager-beans.xml
   			classpath:spring-chef-controller.xml
   			classpath:spring-chef-beans.xml
+  			classpath:spring-cooking-controller.xml
+  			classpath:spring-cooking-beans.xml
   		</param-value>
   	</init-param>
   	<!-- servlet 읽는 순서  -->

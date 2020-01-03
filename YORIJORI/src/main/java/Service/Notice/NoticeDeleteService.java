@@ -10,7 +10,7 @@ public class NoticeDeleteService {
 	@Autowired
 	NoticeRepository noticeRepository;
 
-	public Integer notDelete(int noticeNum) {
+	public Integer notDelete(Integer noticeNum) {
 		return noticeRepository.noticeDelete(noticeNum);
 		
 	}

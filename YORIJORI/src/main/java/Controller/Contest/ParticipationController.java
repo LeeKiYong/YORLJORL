@@ -22,13 +22,13 @@ public class ParticipationController {
 	@Autowired
 	ParticipationFormService participationFormService;
 
-	@RequestMapping("contest/participation")
+	@RequestMapping("/participation")
 	public String form(ManagerLoginCommand managerLoginCommand, ParticipationCommand participationCommand, Model model) {
 		participationFormService.contestNumSelect(model);
 		return "contest/participationForm";
 	}
 	
-	@RequestMapping("contest/participationInsert")
+	@RequestMapping("/participationInsert")
 	public String participationInsert(ManagerLoginCommand managerLoginCommand, ParticipationCommand participationCommand, HttpSession session, HttpServletRequest request) {
 		participationInsertService.insert(participationCommand, session, request);
 		return "redirect:/contest";

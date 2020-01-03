@@ -42,7 +42,7 @@
 			<tr>
 				<td width="200">아이디</td>
 				<td width="400">
-					${authInfo.id }
+					${authInfo .id }
 				</td>
 			</tr>
 			<tr>

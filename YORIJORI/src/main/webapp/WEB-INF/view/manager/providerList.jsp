@@ -7,6 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>공급자 목록</title>
+<script type="text/javascript">
+</script>
+</head>
 
 <!-- 상단 mainTop(메뉴바) include -->
 <div>
@@ -24,7 +27,7 @@
 	</div>
 	<br />
 	
-	<table width = 1200 align="center" border=1 cellpadding=15px;">
+	<table width = 1200px align="center" border=1 cellpadding=15px>
 	
 		<tr>
 			<td width="300">사업자 번호</td>

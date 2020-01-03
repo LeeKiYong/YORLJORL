@@ -23,12 +23,12 @@ public class ContestController {
 	}
 	
 	
-	@RequestMapping("/contest/regForm")
+	@RequestMapping("/regForm")
 	public String contestForm(ManagerLoginCommand managerLoginCommand, ContestCommand contestCommand) {
 		return "contest/contestForm";
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/contest/regAction")
+	@RequestMapping(method = RequestMethod.POST, value = "/regAction")
 	public String contestCreateAction(ManagerLoginCommand managerLoginCommand, ContestCommand contestCommand, Errors errors) {
 		
 		//유효성 검사.

@@ -16,4 +16,8 @@
 
 <bean class="Controller.Contest.ParticipationController">
 </bean>
+
+<bean class="Controller.Contest.ParticipationListController">
+</bean>
+
 </beans>

@@ -21,8 +21,8 @@
 		<jsp:include page="../main/sideNav.jsp" />
 	</div></div>
 <div class="contest_main">
-	<a href="contest/regForm">경연대회 등록</a>
-	<a href="contest/participation">참가자 등록</a>
+	<a href="regForm">경연대회 등록</a>
+	<a href="participation">참가자 등록</a>
 </div>
 </body>
 </html>

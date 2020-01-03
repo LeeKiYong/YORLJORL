@@ -148,7 +148,7 @@ $(function () {
 					<button class="w3-button w3-black w3-round-xlarge" style="width:290px; ">로그인</button>
 				</a>
 				<div>
-					<a href="register/regist">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="regist">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="##" class="" >아이디</a>&middot;
 					<a href="###" class="" >비밀번호 찾기</a>
 	    		</div>
@@ -162,8 +162,11 @@ $(function () {
 	    		<a href = "chefSignUp">쉐프신청</a> | 
 	    		</c:if>
 	       		<c:if test="${!empty manauthInfo }">
-	    		<strong>${manauthInfo.manNameA } 님</strong>
-				<a href = "chefSignUpList?managerNum=${manauthInfo.managerNum }">신청목록보기</a>	    		
+	    			<strong>${manauthInfo.manNameA } 님</strong>
+		<%-- 		<a href = "chefSignUpList?managerNum=${manauthInfo.managerNum }">신청목록보기</a>	 --%>    		
+	    			<div>
+	    				<a href="participationList">참가신청승인</a>
+	    			</div>
 	    		</c:if>
 	    		<div style="text-align:right;">
 	    			<button class="w3-button w3-black w3-round-xlarge" 

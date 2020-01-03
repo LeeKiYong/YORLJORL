@@ -35,7 +35,7 @@ public class ManagerLoginService {
 			result = 0;
 		} else {
 			if(managerLoginCommand.getMpw().equals(manDTO.getManagerPassword())) {
-				managerAutoInfo = new ManagerAutoInfo(manDTO.getManagerId(), manDTO.getManagerPassword(), manDTO.getManagerSecondPassword(), manDTO.getManagerName());
+				managerAutoInfo = new ManagerAutoInfo(manDTO.getManagerNum(), manDTO.getManagerId(), manDTO.getManagerPassword(), manDTO.getManagerSecondPassword(), manDTO.getManagerName());
 				// 세션에저장
 				session.setAttribute("manauthInfo", managerAutoInfo);
 				result = 1;

@@ -20,6 +20,9 @@ public class noticeUpdateController {
 	
 	@RequestMapping("/noticeUpdate")
 	public String noticeUpdate(@RequestParam("num") Integer noticeNum, ManagerLoginCommand managerLoginCommand) {
+		//num값을 아예 못받아오는지 확인
+		System.out.println(noticeNum);
+		
 		return "redirect:/noticeUpdate";
 	}
 	

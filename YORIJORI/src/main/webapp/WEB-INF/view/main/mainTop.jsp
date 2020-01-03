@@ -9,20 +9,7 @@
 <title></title>
 <link rel="stylesheet" type="text/css" href="/YORIJORI/css/mainTop.css" />
 <script type="text/javascript">
-$(function() {
-	$(".mainTop_nav a").mouseover(function() {
-		$(".mainTop_navigation").stop().animate({height:250}, 100);
-		$(".mainTop_navigation").css( "border-bottom", "2px solid #da304f" );
-		$(".mainTop_nav2").css("display", "inline-block")
-	});
-		
-	$(".mainTop_navigation").mouseleave(function() {
-		$(".mainTop_navigation").stop().animate({height:45}, 100);
-		$(".mainTop_nav2").css("display", "none")
-	});
-		
-	$(this).hide();
-});	
+
 
 </script>
 </head>
@@ -38,52 +25,18 @@ $(function() {
 			<ul>
 				<li style="width:150;">
 					<a class="menuLink" href="recipeMain">레시피</a>
-					<ul class="mainTop_nav2" style="width: 150;">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
-					</ul>
 				</li>
 				<li>|</li>
 				<li style="width:150;">
 					<a class="menuLink" href="##">클래스</a>
-					<ul class="mainTop_nav2" style="width: 150;">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
-					</ul>
 				</li>
 				<li>|</li>
 				<li style="width:150;">
 					<a class="menuLink" href="martMain">쇼핑몰</a>
-					<ul class="mainTop_nav2" style="width: 150;">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
-					</ul>
 				</li>
 				<li>|</li>
 				<li style="width:150;">
 					<a class="menuLink" href="contest">경연대회</a>
-					<ul class="mainTop_nav2" style="width: 150;">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
-					</ul>
-				</li>
-				<li>|</li>
-				<li style="width:150;">
-					<a class="menuLink" href="#####">QnA</a>
-					<ul class="mainTop_nav2" style="width: 150;">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
-					</ul>
 				</li>
 			</ul>
 		</div>

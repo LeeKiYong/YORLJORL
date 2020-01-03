@@ -12,7 +12,7 @@
 <body>
 <!-- header로고 -->
 <div class="header_logo" style="text-align:center">
-	<a href="../main">
+	<a href="main">
 		<img src="/YORIJORI/images/요리조리로고.png" alt="메인로고" style="margin-top: 10px;" />
 	</a>
 </div>

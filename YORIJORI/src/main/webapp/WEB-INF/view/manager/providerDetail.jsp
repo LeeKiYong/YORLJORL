@@ -14,8 +14,6 @@
 	src="http://code.jquery.com/jquery-latest.js"></script>
 
 <script type="text/javascript">
-
-
 	$(function(){
 		$("#providerModify").click(function() {
 			location.href="providerModification?providerNum=" + ${provider.providerNum};
@@ -26,7 +24,10 @@
 		$("#providerDelete").click(function() {
 			location.href="providerDelete?providerNum=" + ${provider.providerNum};
 		});
-	})
+		$("#contract").click(function() {
+			location.href="contract?providerNum=" + ${provider.providerNum};
+		});
+	});
 </script>
 
 <!-- 상단 mainTop(메뉴바) include -->
@@ -72,6 +73,7 @@
 		
 		<div id="btn"
 			style="text-align: center; vertical-align: middle; text-decoration: none; ">
+			<button id = "contract" style="width:75px; height:30px; align:center;">계약</button>
 			<button id = "providerModify" style="width:75px; height:30px; align:center;" >수정</button>
 			<button id = "providerList"  style="width:85px; height:30px; align:center;">공급자목록</button>
 			<button id = "providerDelete"  style="width:85px; height:30px; align:center;">삭제</button>

@@ -56,6 +56,8 @@ $(function() {
 });
 </script>
 
+<script type="text/javascript">
+</script>
 
 <!-- 상단 mainTop(메뉴바) include -->
 <div>

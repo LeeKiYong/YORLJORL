@@ -11,10 +11,29 @@
 	<!-- 반복 사용하는 전체컬럼 설정. -->
 	<!-- 사용시 <include refid="지정id" /> -->
 	<sql id="baseColumn">
-		participation_num, contest_num, mem_num, mem_id, participation_intro, participation_app, 
+		participation_num, contest_num, mem_num, mem_id, participation_intro, participation_app,  
 		participation_score, participation_rank, participation_original, 
 		participation_store, participation_file_size
 	</sql>
+	
+	<!-- ResultMap 설정 
+	PK일 때  id 사용  / 일반컬럼(나머지)일때는 result
+	jdbcType == rs.get타입()과 동일
+	property == DTO 맴버필드
+	 >> resultMap == 작성시 dto.setXXXX(rs.get타입("컬럼명")) >>> DB의 데이터를 DTO에 넣는 과정 -->
+	<resultMap type="parDTO" id="baseParticipation">
+		<id column="participation_num" jdbcType="BIGINT" property="participationNum" />
+		<result column="contest_num" jdbcType="BIGINT" property="contestNum" />
+		<result column="mem_num" jdbcType="BIGINT" property="memNum" />
+		<result column="mem_id" jdbcType="VARCHAR" property="memId" />
+		<result column="participation_intro" jdbcType="VARCHAR" property="participationIntro" />
+		<result column="participation_app" jdbcType="VARCHAR" property="participationApp" />
+		<result column="participation_score" jdbcType="INTEGER" property="participationScore" />
+		<result column="participation_rank" jdbcType="INTEGER" property="participationRank" />
+		<result column="participation_original" jdbcType="VARCHAR" property="participationOriginal" />
+		<result column="participation_store" jdbcType="VARCHAR" property="participationStore" />
+		<result column="participation_file_size" jdbcType="VARCHAR" property="participationFileSize" />
+	</resultMap>
 	
 	<!-- insert -->
 	<!-- 참가자등록 -->
@@ -29,4 +48,29 @@
 			'0', '0', #{participationOriginal}, #{participationStore}, #{participationFileSize} )
 	</insert>	
 	
+	<!-- select -->
+	<!-- 참가신청리스트 -->
+	<select id="participationSelect" parameterType="parDTO" resultMap="baseParticipation" >
+		select <include refid="baseColumn" /> from participation
+		where participation_app = 'N'
+	</select>
+	
+	<!-- 수정된 참가신청리스트 -->
+	<select id="upParticipationSelect" parameterType="parDTO" resultMap="baseParticipation">
+		select <include refid="baseColumn" /> from participation
+		where participation_app = 'Y'
+	</select>
+	
+	<!-- update -->
+	<!-- 참가신청 승인 -->
+	<update id="upParticipationApp"  parameterType="java.util.HashMap">
+		update participation set participation_app='Y' 
+		<trim prefix="WHERE" prefixOverrides="AND |OR">
+			participation_num in
+		<foreach collection="upParNum" item="participationNum" 
+			index="index" separator="," open="(" close=")">
+			#{participationNum}	 
+		</foreach>
+		</trim>
+	</update>
 </mapper>

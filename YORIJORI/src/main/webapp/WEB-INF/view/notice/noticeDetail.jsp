@@ -10,7 +10,7 @@
 </head>
 <body>
 <table width=50% border="1" cellpadding="0" cellspacing="0" >
-	<tr align="center" valign="middle">
+	<tr align="left" valign="middle">
 		<td height = "16" colspan="2">
 			등록일 <fmt:formatDate value="${notice.noticeDate }" type="date"/>
 		</td>
@@ -37,7 +37,7 @@
 		</td>
 	</tr>
 	 -->
-	<tr align="center" valign="middle">
+	<tr align="right" valign="middle">
 		<td colspan = 2>		
 			<a href = "noticeUpdate?num=${notice.noticeNum }" >수정</a> &nbsp;
 			<a href = "noticeDelete?num=${notice.noticeNum }" >삭제</a> &nbsp;
