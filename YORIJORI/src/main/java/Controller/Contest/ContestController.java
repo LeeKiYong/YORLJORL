@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import Command.Contest.ContestCommand;
+import Command.manager.ManagerLoginCommand;
 import Service.Contest.ContestCreateService;
 import Validator.ContestCommandValidator;
 
@@ -17,18 +18,18 @@ public class ContestController {
 	ContestCreateService contestCreateService;
 	
 	@RequestMapping("/contest")
-	public String contestMain() {
+	public String contestMain(ManagerLoginCommand managerLoginCommand) {
 		return "contest/contestMain";
 	}
 	
 	
 	@RequestMapping("/contest/regForm")
-	public String contestForm(ContestCommand contestCommand) {
+	public String contestForm(ManagerLoginCommand managerLoginCommand, ContestCommand contestCommand) {
 		return "contest/contestForm";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/contest/regAction")
-	public String contestCreateAction(ContestCommand contestCommand, Errors errors) {
+	public String contestCreateAction(ManagerLoginCommand managerLoginCommand, ContestCommand contestCommand, Errors errors) {
 		
 		//유효성 검사.
 		new ContestCommandValidator().validate(contestCommand, errors);

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import Command.Notice.NoticeCommand;
+import Command.manager.ManagerLoginCommand;
 import Service.Notice.NoticeUpdateService;
 
 @Controller
@@ -18,12 +19,12 @@ public class noticeUpdateController {
 	NoticeUpdateService noticeUpdateService;
 	
 	@RequestMapping("/noticeUpdate")
-	public String noticeUpdate(@RequestParam("num") Integer noticeNum) {
+	public String noticeUpdate(@RequestParam("num") Integer noticeNum, ManagerLoginCommand managerLoginCommand) {
 		return "redirect:/noticeUpdate";
 	}
 	
 	@RequestMapping(value="/noticeUpdatePro", method = RequestMethod.POST)
-	public String noticeUp(NoticeCommand noticeCommand, HttpServletRequest request) {
+	public String noticeUp(NoticeCommand noticeCommand, HttpServletRequest request, ManagerLoginCommand managerLoginCommand) {
 		noticeUpdateService.noticeUpdate(noticeCommand, request);
 		return "notice/noticeDetail";
 	}

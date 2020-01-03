@@ -87,6 +87,9 @@ $(function () {
 <div class="div_container">
 	<!-- 메인 왼쪽 -->
     <div class="div_left">
+    	<div>
+		<jsp:include page="sideNav.jsp" />
+	</div>
     	<!-- 게시판 탭 메뉴 -->
     	<div class="board" style="border: 2px solid black; height:300px; margin:5px;">
 		   	<div class="board_tap" id="board_tap">

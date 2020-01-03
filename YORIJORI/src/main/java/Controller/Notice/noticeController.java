@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import Command.Notice.NoticeCommand;
 import Command.Notice.NoticeListCommand;
+import Command.manager.ManagerLoginCommand;
 import Service.Notice.NoticeListService;
 import Service.Notice.NoticeWriteService;
 
@@ -24,13 +25,13 @@ public class noticeController {
 	
 	//리스트에서 공지글 쓰기 버튼을 눌렀을 때
 	@RequestMapping("/noticeWrite")
-	public String noticeWrite(NoticeCommand noticeCommand) {
+	public String noticeWrite(ManagerLoginCommand managerLoginCommand, NoticeCommand noticeCommand) {
 		return "notice/noticeWrite";
 	}
 	
 	//공지글쓰기 페이지에서 등록 버튼을 눌렀을 때
 	@RequestMapping(value="/noticeWritePro", method = RequestMethod.POST)
-	public String write(NoticeCommand noticeCommand, HttpServletRequest request) {
+	public String write(ManagerLoginCommand managerLoginCommand, NoticeCommand noticeCommand, HttpServletRequest request) {
 		noticeWriteService.noticeWrite(noticeCommand, request );
 		return "notice/noticeList";
 		

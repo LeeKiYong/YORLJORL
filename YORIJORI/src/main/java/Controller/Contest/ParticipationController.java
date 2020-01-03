@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import Command.Contest.ParticipationCommand;
+import Command.manager.ManagerLoginCommand;
 import Service.Contest.ParticipationFormService;
 import Service.Contest.ParticipationInsertService;
 
@@ -22,13 +23,13 @@ public class ParticipationController {
 	ParticipationFormService participationFormService;
 
 	@RequestMapping("contest/participation")
-	public String form(ParticipationCommand participationCommand, Model model) {
+	public String form(ManagerLoginCommand managerLoginCommand, ParticipationCommand participationCommand, Model model) {
 		participationFormService.contestNumSelect(model);
 		return "contest/participationForm";
 	}
 	
 	@RequestMapping("contest/participationInsert")
-	public String participationInsert(ParticipationCommand participationCommand, HttpSession session, HttpServletRequest request) {
+	public String participationInsert(ManagerLoginCommand managerLoginCommand, ParticipationCommand participationCommand, HttpSession session, HttpServletRequest request) {
 		participationInsertService.insert(participationCommand, session, request);
 		return "redirect:/contest";
 	}
