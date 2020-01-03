@@ -47,7 +47,7 @@ public class NoticeRepository {
 	}
 	
 	//삭제를 위한 메소드...ㅇ인데 인티져로 하는게 맞을까?
-	public Integer noticeDelete(int noticeNum) {
+	public Integer noticeDelete(Integer noticeNum) {
 		String statement = namespace + ".noticeDelete";
 		int result = sqlSession.delete(statement);
 		return result;

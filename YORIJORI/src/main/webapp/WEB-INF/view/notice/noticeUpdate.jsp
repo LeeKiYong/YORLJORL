@@ -9,7 +9,7 @@
 <title>공지사항</title>
 </head>
 <body>
-<form:form action="noticeUpdatePro" method="post" enctype="multipart/form-data" commandName="noticeCommand">
+<form:form action="noticeUpdatePro" method="post" commandName="noticeCommand">
 <table width=50% border="1" cellpadding="0" cellspacing="0" >
 	<tr align="center" valign="middle">
 		<td style = "font-size:12" height = "16" colspan="2">

@@ -17,8 +17,11 @@ public class noticeUpdateController {
 	@Autowired
 	NoticeUpdateService noticeUpdateService;
 	
-	@RequestMapping("/noticeUpdate")
+	@RequestMapping(value="/noticeUpdate", method = RequestMethod.GET)
 	public String noticeUpdate(@RequestParam("num") Integer noticeNum) {
+		//num값을 아예 못받아오는지 확인
+		System.out.println(noticeNum);
+		
 		return "redirect:/noticeUpdate";
 	}
 	
