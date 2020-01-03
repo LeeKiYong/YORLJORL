@@ -34,11 +34,19 @@
 		insert into provider(<include refid="providerColumn" />)
 		values(#{providerNum}, #{providerName}, #{providerPh}, #{providerEmail}, #{providerAccount}, #{accountsPayable})
 	</insert>
+	
 	<select id="providerSelect" parameterType="providerDTO" resultMap="provider">
 		select <include refid="providerColumn" /> from provider 
 	</select>
+	
 	<select id="providerSelectOne" parameterType="providerDTO" resultMap="provider">
-		select <include refid="providerColumn" /> from provider 
-		where provider_num = #{providerNum}
+		select <include refid="providerColumn" /> from provider where provider_num = #{providerNum}
 	</select>
+	
+	<update id="modifyProUpdate" parameterType="providerDTO">
+		update provider set PROVIDER_PH = #{providerPh}, PROVIDER_EMAIL = #{providerEmail}, PROVIDER_ACCOUNT = #{providerAccount}
+		where provider_num = #{providerNum}
+	</update>
+	<delete id = "providerDelete" parameterType="providerDTO">
+		delete from provider where provider_num = #{providerNum}</delete>
 </mapper>

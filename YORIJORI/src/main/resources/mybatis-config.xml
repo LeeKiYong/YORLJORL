@@ -17,6 +17,7 @@
 	 	<typeAlias type="Model.DTO.ProviderDTO" alias="providerDTO"/>
 	 	<typeAlias type="Model.DTO.ContestDTO" alias="contestDTO"/> 
 	 	<typeAlias type="Model.DTO.ParticipationDTO" alias="parDTO"/>
+	 	<typeAlias type="Model.DTO.ContractDTO" alias="contractDTO"/>
 	 </typeAliases>
 	
 </configuration>

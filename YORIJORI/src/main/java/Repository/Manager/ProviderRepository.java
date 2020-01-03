@@ -18,8 +18,8 @@ public class ProviderRepository {
 	private SqlSession sqlSession;
 	
 	//MemberMapper.xml에 정해준 namespace사용  >>> 같아야함
-		//xxxMapper.xml에 쿼리문 작성.
-		private final String namespace = "ProviderMapper";
+	//xxxMapper.xml에 쿼리문 작성.
+	private final String namespace = "ProviderMapper";
 
 	public Integer providerInsert(ProviderDTO providerDTO) {
 		Integer result = null;
@@ -41,6 +41,22 @@ public class ProviderRepository {
 		String statement = namespace + ".providerSelectOne";//mapper에 있는 selectOne을 찾아서 실행
 		
 		return sqlSession.selectOne(statement,dto);
+	}
+	
+	public Integer modifyProUpdate(ProviderDTO providerDTO) {
+		Integer result = null;
+		//Mapper에 있는 id 경로 
+		String statement = namespace + ".modifyProUpdate";
+		result = sqlSession.update(statement,providerDTO);
+		return result;
+	}
+
+	public Integer providerDelete(ProviderDTO providerDTO) {
+		Integer result = null;
+		//Mapper에 있는 id 경로
+		String statement = namespace + ".providerDelete";//mapper에 있는 delete를 찾아서 실행
+		result = sqlSession.delete(statement, providerDTO);
+		return result;
 	}
 
 }

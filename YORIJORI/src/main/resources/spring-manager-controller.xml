@@ -15,4 +15,9 @@
 </bean>
 <!-- 관리자아이디로 로그인 컨트롤러 -->
 <bean class = "Controller.Manager.managerLoginController" />
+
+<!-- 계약 컨트롤러 -->
+<bean class="Controller.Manager.ContractController" />
+
 </beans>
+

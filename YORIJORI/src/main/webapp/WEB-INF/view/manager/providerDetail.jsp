@@ -14,7 +14,20 @@
 	src="http://code.jquery.com/jquery-latest.js"></script>
 
 <script type="text/javascript">
-	
+	$(function(){
+		$("#providerModify").click(function() {
+			location.href="providerModification?providerNum=" + ${provider.providerNum};
+		});
+		$("#providerList").click(function() {
+			location.href="providerList";
+		});
+		$("#providerDelete").click(function() {
+			location.href="providerDelete?providerNum=" + ${provider.providerNum};
+		});
+		$("#contract").click(function() {
+			location.href="contract?providerNum=" + ${provider.providerNum};
+		});
+	});
 </script>
 
 <!-- 상단 mainTop(메뉴바) include -->
@@ -25,6 +38,7 @@
 <body>
 		<h3 align="center">공급자 상세보기</h3>
 		<hr size=5px align="center" color="" />
+
 		<table width=900 align="center" border=1 cellpadding=15px;">
 			<tr>
 				<td width="200">사업자 번호</td>
@@ -56,11 +70,13 @@
 			</tr>
 		</table>
 		<br />
+		
 		<div id="btn"
-			style="text-align: center; vertical-align: middle; text-decoration: none;">
-			<input type="button" name="providerModify" id="providerModify" value="수정" /> <input
-				type="button" value="공급자목록" onclick="location.href='../providerList'" /> <input
-				type="button" name="providerDelete" id="providerDelete" value="삭제" />
+			style="text-align: center; vertical-align: middle; text-decoration: none; ">
+			<button id = "contract" style="width:75px; height:30px; align:center;">계약</button>
+			<button id = "providerModify" style="width:75px; height:30px; align:center;" >수정</button>
+			<button id = "providerList"  style="width:85px; height:30px; align:center;">공급자목록</button>
+			<button id = "providerDelete"  style="width:85px; height:30px; align:center;">삭제</button>
 		</div>
 </body>
 <div>

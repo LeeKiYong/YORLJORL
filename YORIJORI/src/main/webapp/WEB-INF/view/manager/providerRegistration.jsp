@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-<!-- taglib모음 include -->
+<!-- 태그모음 include -->
 <%@ include file="../publicFile/taglib.jsp" %>
 	
 <!DOCTYPE html>
@@ -13,6 +13,12 @@
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
+$(function(){
+	$("#martMain").click(function() {
+		location.href="martMain";
+	});
+});
+
 $(function() {
 	$("#frm").submit(function() {
 		if ($("#providerNum").val() == "") {
@@ -36,15 +42,17 @@ $(function() {
 			alert("공급자의 이메일주소를  @꺄지 입력하세요.");
 			return false;
 		}
- 		if ($("#providerAccount").val() == "") {
+			if ($("#providerAccount").val() == "") {
 			$("#providerAccount").focus();
 			alert("공급자의 계좌번호를  '-'없이 입력하세요.");
 			return false;
 		}
-		
-	
+			if ($("#accountsPayable").val() == "") {
+			$("#accountsPayable").focus();
+			alert("외상매입금을 입력하세요.");
+			return false;
+		}
 	});
-
 });
 </script>
 
@@ -57,7 +65,7 @@ $(function() {
 </div>
 
 <body>
-	<form:form action="providerRegistration/action" id="frm" name="frm" method="post" commandName="proRegistCommand">
+	<form:form action="providerRegistrationAction" id="frm" name="frm" method="post" commandName="proRegistCommand">
 		<h3 align="center">공급자 등록</h3>
 		<hr size=5px align="center" color="" />
 		<table width=900 align="center" border=1 cellpadding=15px;">
@@ -90,14 +98,15 @@ $(function() {
 			<tr>
 				<td width="200">외상매입금</td>
 				<td width="400"><form:input path="accountsPayable" size="40"
-					id="providerAccount" style="line-height: 20px" placeholder="외상매입금을 입력하세요."/>&nbsp;원</td>
+					id="accountsPayable" style="line-height: 20px" placeholder="외상매입금을 입력하세요."/>&nbsp;원</td>
 			</tr>
 		</table>
 		<br />
 		<div id="btn"
 			style="text-align: center; vertical-align: middle; text-decoration: none;">
-			<input type="submit" value="공급자등록" style="width:75px; height:30px; align:center;"/> <input type="reset"
-				value="다시 입력" style="width:75px; height:30px; align:center;"/> <input type="button" value="등록취소" style="width:75px; height:30px; align:center;"/>
+			<input type="submit" value="공급자등록" style="width:75px; height:30px; align:center;"/>
+			<input type="reset" value="다시 입력" style="width:75px; height:30px; align:center;"/>
+			<button id = "martMain"  style="width:75px; height:30px; align:center;">취소</button>
 		</div>
 	</form:form>
 </body>

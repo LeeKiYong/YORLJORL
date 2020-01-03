@@ -16,6 +16,11 @@
 		<img src="/YORIJORI/images/요리조리로고.png" alt="메인로고" style="margin-top: 10px;" />
 	</a>
 </div>
+<!-- 메인 왼쪽 -->
+    <div class="div_left">
+    	<div>
+		<jsp:include page="../main/sideNav.jsp" />
+	</div></div>
 
 
 어서오세욧!

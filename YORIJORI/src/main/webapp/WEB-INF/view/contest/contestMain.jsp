@@ -15,6 +15,11 @@
 <div>
 	<jsp:include page="../main/mainTop.jsp" />
 </div>
+<!-- 메인 왼쪽 -->
+    <div class="div_left">
+    	<div>
+		<jsp:include page="../main/sideNav.jsp" />
+	</div></div>
 <div class="contest_main">
 	<a href="contest/regForm">경연대회 등록</a>
 	<a href="contest/participation">참가자 등록</a>

@@ -39,6 +39,11 @@
 	<jsp:include page="mainTop.jsp" />
 </div>
 <body>
+<!-- 메인 왼쪽 -->
+    <div class="div_left">
+    	<div>
+		<jsp:include page="../main/sideNav.jsp" />
+	</div></div>
 <form:form id="frm" name="frm" action="login" method="post" commandName="loginCommand">
 <div class="login_form">
 	<div class="login_insert" >
@@ -54,7 +59,7 @@
 		<div class="errors_message"><form:errors path="pw" /></div>
 	</div>
 	<div class="login_option" style="text-align:center;">
-		<a href="agree">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="regist">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="##" class="" >아이디</a>&middot;
 		<a href="###" class="" >비밀번호 찾기</a>&nbsp;&nbsp;
 		<spring:message code="autoLogin"/>
@@ -62,7 +67,7 @@
     </div>
     <div class="login_action">
     	<input class="w3-button w3-black w3-round-xlarge" type="submit" value="로그인" 
-    	style="width: 300px; text-align: center;" id="btn" />
+    		style="width: 300px; margin-left:750px; text-align: center;" id="btn";  />
     </div>
 </div>
 </form:form>

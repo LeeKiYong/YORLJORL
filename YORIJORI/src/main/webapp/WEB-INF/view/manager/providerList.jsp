@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
     <!-- taglib모음 include -->
 <%@ include file="../publicFile/taglib.jsp" %>
 <!DOCTYPE html>
@@ -11,6 +10,7 @@
 <script type="text/javascript">
 </script>
 </head>
+
 <!-- 상단 mainTop(메뉴바) include -->
 <div>
 	<jsp:include page="../main/mainTop.jsp" />
@@ -22,7 +22,7 @@
 	<div id="btn"
 		style="text-align: center; vertical-align: middle; text-decoration: none;">
 		<button>
-			<a href="providerRegistration" style="text-decoration: none;">공급자등록</a>
+			<a href="providerRegistration" style="text-decoration: none; width:75px; height:30px; align:center;">공급자등록</a>
 		</button>
 	</div>
 	<br />
@@ -41,8 +41,14 @@
 			<c:forEach var="providerList" items="${list }"
 				varStatus="status">
 				<tr>
-					<td width="300"><a href="<c:url value='/providerDetail/${providerList.providerNum }'/>" style="text-decoration: none;">
-				${providerList.providerNum } </a></td>
+					<td width="300">
+ 				<a href="providerDetail?providerNum=${providerList.providerNum}">
+				${providerList.providerNum }</a>
+<%-- 				<form:form commandName = "proRegistCommand" action = "providerDetail">
+				
+				<form:input type="submit" path="providerNum" value = "${providerList.providerNum }" />
+				</form:form> --%>
+				</td>
 					<td width="200">${providerList.providerName }</td>
 					<td width="300">${providerList.providerPh }</td>
 					<td width="300">${providerList.providerEmail }</td>
